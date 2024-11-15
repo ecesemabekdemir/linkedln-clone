@@ -1,41 +1,60 @@
+import HomeIcon from "@/svgs/home";
+import Profile from "../profile";
+import NetworkIcon from "@/svgs/networkIcon";
+import Ads from "@/svgs/ads";
+import MessageIcon from "@/svgs/mesagge";
+import NotificationIcon from "@/svgs/notificationIcon";
+
 export default function Nav() {
   return (
     <>
       <ul class="nav-list">
         <li class="nav-item">
           <a href="#" class="nav-link">
-            <span class="icon">🏠</span>
+            <span class="icon">
+              <HomeIcon />
+            </span>
             <span class="label">Ana Sayfa</span>
           </a>
         </li>
         <li class="nav-item">
           <a href="#" class="nav-link">
-            <span class="icon">👥</span>
+            <span class="icon">
+              <NetworkIcon />
+            </span>
             <span class="label">Ağım</span>
           </a>
         </li>
         <li class="nav-item">
           <a href="#" class="nav-link">
-            <span class="icon">💼</span>
+            <span class="icon">
+              <Ads />
+            </span>
             <span class="label">İş İlanları</span>
           </a>
         </li>
         <li class="nav-item">
           <a href="#" class="nav-link">
-            <span class="icon">✉️</span>
+            <span class="icon">
+              <MessageIcon />
+            </span>
             <span class="label">Mesajlaşma</span>
           </a>
         </li>
         <li class="nav-item">
           <a href="#" class="nav-link">
-            <span class="icon notification">🔔</span>
-            <span class="badge">3</span>
+            <span class="icon notification">
+              <NotificationIcon />
+            </span>
+            <span class="badge"></span>
             <span class="label">Bildirimler</span>
           </a>
         </li>
         <li class="nav-item">
           <a href="#" class="nav-link">
-            <span class="icon proafile">👤</span>
+            <span class="label">
+              <Profile />
+            </span>
             <span class="label">Ben</span>
           </a>
         </li>
