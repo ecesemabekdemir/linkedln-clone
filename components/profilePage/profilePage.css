@@ -198,7 +198,6 @@ h1 {
   display: flex;
   gap: 8px;
   padding: 4px 24px;
-
 }
 
 .tab {
@@ -237,7 +236,6 @@ h1 {
   line-height: 1.4;
 }
 
-
 .post-stats {
   display: flex;
   justify-content: space-between;
@@ -257,14 +255,17 @@ h1 {
   padding: 12px;
   color: rgba(0, 0, 0, 0.6);
   text-decoration: none;
+ 
 
 }
+
+
 
 /*--------------------------modal post gönderme */
 .modal-overlay {
   position: fixed;
   top: 0;
-  left: 0; 
+  left: 0;
   width: 100vw;
   height: 100vh;
   background: rgba(0, 0, 0, 0.5);
@@ -317,7 +318,6 @@ h1 {
   gap: 4px;
 }
 
-
 .close-button {
   width: 40px;
   height: 40px;
@@ -338,11 +338,7 @@ h1 {
   padding: 20px;
 }
 
-.prompt {
-  font-size: 16px;
-  color: rgba(0, 0, 0, 0.9);
-  margin-bottom: 16px;
-}
+
 
 .modal-content {
   min-height: 120px;
@@ -354,8 +350,6 @@ h1 {
   line-height: 1.5;
   color: rgba(0, 0, 0, 0.9);
 }
-
-
 
 .modal-footer {
   padding: 12px 20px;
@@ -411,4 +405,111 @@ h1 {
 
 .send-button:hover {
   background-color: #004182;
+}
+
+/*--------------------eğitimler*/
+
+.education-card {
+  background: white;
+  border-radius: 8px;
+  max-width: 800px;
+  margin: 0 auto;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.08);
+  padding: 24px;
+}
+
+.education-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.education-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.9);
+  margin: 0;
+}
+
+.education-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.education-action-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.education-action-button:hover {
+  background: rgba(0, 0, 0, 0.08);
+}
+
+.education-item {
+  display: flex;
+  gap: 16px;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.education-logo {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.education-details {
+  flex: 1;
+}
+
+.school-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.9);
+  margin-bottom: 4px;
+}
+
+.program {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.9);
+  margin-bottom: 4px;
+}
+
+.date {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.6);
+  margin-bottom: 8px;
+}
+
+.education-skills {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 14px;
+}
+
+.education-show-more {
+  display: block;
+  text-align: center;
+  padding: 12px;
+  color: rgba(0, 0, 0, 0.6);
+  text-decoration: none;
+  margin: 0 -24px -24px;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.education-show-more:hover {
+  background: rgba(0, 0, 0, 0.08);
+  color: rgba(0, 0, 0, 0.9);
 }
