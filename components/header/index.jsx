@@ -2,6 +2,8 @@ import Logo from "@/svgs/logo";
 import "./header.css";
 import Search from "./search";
 import Nav from "./nav";
+import Icon from "@/svgs/icon";
+import OkIcon from "@/svgs/okIcon";
 
 export default function Header() {
   return (
@@ -16,7 +18,14 @@ export default function Header() {
         <Nav />
       </div>
       <div class="nav-right">
-        <button class="menu-button">≡</button>
+        <button class="menu-button">
+          <span>
+            <Icon />
+          </span>
+          <span class="label">
+            işletmelere özel <OkIcon />
+          </span>
+        </button>
         <a href="#" class="premium-link">
           0 TRY ile Premium'u deneyin
         </a>
