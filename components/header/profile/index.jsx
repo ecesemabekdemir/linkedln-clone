@@ -8,7 +8,7 @@ export default function Profile() {
   return (
     <div className="dropdown">
       <button onClick={() => setShow(!show)} className="dropbtn">
-        <span class="icon proafile">👤</span>
+        <span class="icon profile"></span>
       </button>
       {show && (
         <div className="dropdown-content">
