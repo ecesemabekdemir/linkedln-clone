@@ -10,7 +10,7 @@
 body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
-  background-color: #F7F8FD;
+  background-color: #F4F2EE;
   margin-inline: 165px;
 }
 
@@ -37,4 +37,8 @@ h1, h2, h3, h4, h5, h6 {
 
 a {
   text-decoration: none;
+}
+
+.container {
+  max-width: 1200px;
 }
