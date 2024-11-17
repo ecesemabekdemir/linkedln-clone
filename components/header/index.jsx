@@ -14,6 +14,7 @@ export default function Header() {
         </a>
         <Search />
       </div>
+
       <div class="main-nav">
         <Nav />
       </div>
@@ -23,12 +24,10 @@ export default function Header() {
             <Icon />
           </span>
           <span class="label">
-            işletmelere özel <OkIcon />
+            İş için <OkIcon />
           </span>
         </button>
-        <a href="#" class="premium-link">
-          Bu bir clone projedir
-        </a>
+        <p className="premium-link">CLONE PROJEDİR</p>
       </div>
     </div>
   );

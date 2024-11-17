@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import "./profile.css";
+import Link from "next/link";
 
 export default function Profile() {
   const [show, setShow] = useState(false);
@@ -21,7 +22,11 @@ export default function Profile() {
                   <h1 className="profile-status">Frontend Developer</h1>
                 </div>
               </div>
-              <button className="view-profile-btn">Profili Görüntüleyin</button>
+              <Link href="/linkedln" className="nav-link">
+                <button className="view-profile-btn">
+                  Profili Görüntüleyin
+                </button>
+              </Link>
             </div>
 
             <div className="dropdown-section">

@@ -4,58 +4,59 @@ import NetworkIcon from "@/svgs/networkIcon";
 import Ads from "@/svgs/ads";
 import MessageIcon from "@/svgs/mesagge";
 import NotificationIcon from "@/svgs/notificationIcon";
+import Link from "next/link";
 
 export default function Nav() {
   return (
     <>
-      <ul class="nav-list">
-        <li class="nav-item">
-          <a href="#" class="nav-link">
-            <span class="icon">
+      <ul className="nav-list">
+        <li className="nav-item">
+          <Link href="/" className="nav-link">
+            <span className="icon">
               <HomeIcon />
             </span>
-            <span class="label">Ana Sayfa</span>
-          </a>
+            <span className="label">Ana Sayfa</span>
+          </Link>
         </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link">
-            <span class="icon">
+        <li className="nav-item">
+          <a href="#" className="nav-link">
+            <span className="icon">
               <NetworkIcon />
             </span>
-            <span class="label">Ağım</span>
+            <span className="label">Ağım</span>
           </a>
         </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link">
-            <span class="icon">
+        <li className="nav-item">
+          <a href="#" className="nav-link">
+            <span className="icon">
               <Ads />
             </span>
-            <span class="label">İş İlanları</span>
+            <span className="label">İş İlanları</span>
           </a>
         </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link">
-            <span class="icon">
+        <li className="nav-item">
+          <a href="#" className="nav-link">
+            <span className="icon">
               <MessageIcon />
             </span>
-            <span class="label">Mesajlaşma</span>
+            <span className="label">Mesajlaşma</span>
           </a>
         </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link">
-            <span class="icon notification">
+        <li className="nav-item">
+          <a href="#" className="nav-link">
+            <span className="icon notification">
               <NotificationIcon />
             </span>
-            <span class="badge"></span>
-            <span class="label">Bildirimler</span>
+            <span className="badge"></span>
+            <span className="label">Bildirimler</span>
           </a>
         </li>
         <li class="nav-item">
-          <a href="#" class="nav-link">
+          <a href="#" className="nav-link">
             <span class="label">
               <Profile />
             </span>
-            <span class="label">
+            <span className="label">
               Ben
               <svg
                 width="16"
