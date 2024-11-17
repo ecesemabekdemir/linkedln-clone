@@ -22,24 +22,33 @@
 .main-nav {
   display: flex;
   align-items: center;
-  .nav-list {
+}
+
+.main-nav .nav-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  
+}
+
+li {
+  list-style: none;
+}
+
+.nav-item .nav-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: #191919;
+  font-size: 1rem;
+  color: rgb(0 0 0 / .6);
+  span {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 15px;
-    li {
-      list-style: none;
-      a {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-decoration: none;
-        color: #191919;
-        font-size: 1rem;
-        color: rgb(0 0 0 / .6);
-      }
-    }
+    gap:2px;
   }
 }
 

@@ -55,7 +55,17 @@ export default function Nav() {
             <span class="label">
               <Profile />
             </span>
-            <span class="label">Ben</span>
+            <span class="label">
+              Ben
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="currentColor"
+              >
+                <path d="M8 11L3 6h10l-5 5z" />
+              </svg>
+            </span>
           </a>
         </li>
       </ul>

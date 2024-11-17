@@ -27,7 +27,7 @@ export default function Header() {
           </span>
         </button>
         <a href="#" class="premium-link">
-          0 TRY ile Premium'u deneyin
+          Bu bir clone projedir
         </a>
       </div>
     </div>
