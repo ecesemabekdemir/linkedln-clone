@@ -1,0 +1,210 @@
+.post-creator {
+  margin-inline:auto ;
+  margin-block: 100px 25px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  border: 0.5px solid lightgray;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 600px;
+  padding: 15px;
+
+}
+.post-input {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  gap: 10px;
+}
+.profile-pic {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 0.5px solid lightgray;
+  object-fit: cover;
+}
+.btn-field {
+  flex-grow: 1;
+  text-align: left;
+  border: 0.5px solid gray;
+  background-color: #f0f2f5;
+  border-radius: 20px;
+  padding: 10px 15px;
+  font-size: 16px;
+  outline: none;
+  transition: background-color 0.2s;
+}
+.input-field:hover,
+.input-field:focus {
+  background-color: #e4e6e9;
+}
+.action-buttons {
+  display: flex;
+  justify-content: space-between;
+
+}
+.action-button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: none;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  font-size: 14px;
+  color: #65676b;
+}
+.action-button:hover {
+  background-color: #f0f2f5;
+}
+.action-button svg {
+  width: 20px;
+  height: 20px;
+}
+.medya-icon {
+  color: #45bd62;
+}
+.etkinlik-icon {
+  color: #f7b928;
+}
+.yazi-icon {
+  color: #f5533d;
+}
+/*-----------------------------modal css*/
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-add-post {
+  background: white;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 552px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.modal-header {
+  padding: 16px 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.user-avatar {
+  width: 48px;
+  height: 48px;
+  border: 1px solid gray;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.user-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-name {
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.close-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-button:hover {
+  background: rgba(0, 0, 0, 0.08);
+}
+
+.modal-body {
+  padding: 20px;
+}
+
+
+
+.modal-content {
+  min-height: 120px;
+  width: 100%;
+  border: none;
+  resize: none;
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 1.5;
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-footer {
+  padding: 12px 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.toolbar {
+  display: flex;
+  gap: 16px;
+}
+
+.tool-button {
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.tool-button:hover {
+  background: rgba(0, 0, 0, 0.08);
+}
+
+.send-button {
+  border: none;
+  border-radius: 16px;
+  padding: 6px 16px;
+  font-weight: 600;
+  font-size: 14px;
+  background-color: #0a66c2;
+  color: white;
+  cursor: pointer;
+}
+
+.send-button:hover {
+  background-color: #004182;
+}
+
+/*-----------------------------modal css*/

@@ -318,7 +318,7 @@ h1 {
   gap: 4px;
 }
 
-.close-button {
+.close-button button {
   width: 40px;
   height: 40px;
   border-radius: 50%;

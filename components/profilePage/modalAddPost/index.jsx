@@ -39,7 +39,6 @@ export default function ModalAddPost({ isModalOpen, closeModal }) {
                 <button className="tool-button">😊</button>
                 <button className="tool-button">🖼️</button>
                 <button className="tool-button">📅</button>
-                <button className="tool-button">🖨️</button>
                 <button className="tool-button">➕</button>
               </div>
               <button className="send-button">Gönder</button>
