@@ -1,0 +1,82 @@
+.sidebar-profile-card {
+  background-color: white;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 225px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  padding: 5px;
+  margin-top: 100px;
+}
+
+.sidebar-profile-background {
+  height: 60px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.sidebar-profile-photo {
+  width: 72px;
+  height: 72px;
+  border: 1px solid lightgray;
+  border-radius: 50%;
+  position: absolute;
+  bottom: -36px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: white;
+  overflow: hidden;
+}
+
+.sidebar-profile-info {
+  padding: 48px 12px 16px;
+  text-align: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.sidebar-profile-name {
+  font-size: 16px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.9);
+  margin-bottom: 4px;
+}
+
+.sidebar-profile-title {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.6);
+  margin-bottom: 4px;
+}
+
+.sidebar-profile-stats {
+  padding: 12px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.sidebar-stat-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  margin-bottom: 4px;
+}
+
+.sidebar-stat-label {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.sidebar-stat-value {
+  color: #0a66c2;
+  font-weight: 600;
+}
+
+.sidebar-saved-items {
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 12px;
+}
+
+.sidebar-saved-items:hover {
+  background-color: rgba(0, 0, 0, 0.08);
+}
