@@ -1,3 +1,4 @@
+import News from "@/components/haberler";
 import Header from "@/components/header";
 import PostCreator from "@/components/postCreator";
 import Posts from "@/components/posts";
@@ -12,6 +13,7 @@ export default function Home() {
         <PostCreator />
         <Posts />
       </div>
+      <News />
     </div>
   );
 }
