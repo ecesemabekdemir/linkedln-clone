@@ -46,8 +46,8 @@ export default function Nav() {
           <a href="#" className="nav-link">
             <span className="icon notification">
               <NotificationIcon />
+              <span className="notification-badge">3</span>
             </span>
-            <span className="badge"></span>
             <span className="label">Bildirimler</span>
           </a>
         </li>
