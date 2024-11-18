@@ -107,3 +107,18 @@ li {
   display: flex;
   align-items: center;
 }
+
+.notification {
+  position: relative;
+}
+
+.notification-badge {
+  position: absolute;
+  top: -4px;
+  right: -8px;
+  background-color: #cc1016;
+  color: white;
+  font-size: 10px;
+  padding: 1px 5px;
+  border-radius: 50%;
+}
