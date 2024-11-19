@@ -1,4 +1,4 @@
-import News from "@/components/haberler";
+import News from "@/components/haberle";
 import Header from "@/components/header";
 import PostCreator from "@/components/postCreator";
 import Posts from "@/components/posts";
