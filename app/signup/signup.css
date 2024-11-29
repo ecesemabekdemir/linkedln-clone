@@ -1,11 +1,14 @@
 .signup-container {
-  margin: 40px auto;
+  margin: 100px auto;
+  max-width: 600px;
+  width: 100%;
+}
+/*---------------------------------------------------------step1*/
+.signup-step1 {
   background-color: white;
   padding: 24px;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  max-width: 600px;
-  width: 100%;
 }
 .logo {
   text-align: center;
@@ -36,14 +39,7 @@ input[type="password"] {
   border-radius: 4px;
   margin-bottom: 12px;
 }
-.checkbox-container {
-  display: flex;
-  align-items: center;
-  margin-bottom: 16px;
-}
-.checkbox-container input {
-  margin-right: 8px;
-}
+
 
 .terms {
   font-size: 12px;
@@ -65,37 +61,6 @@ input[type="password"] {
 .btn-primary:hover {
   background-color: #004182;
 }
-.divider {
-  display: flex;
-  align-items: center;
-  text-align: center;
-  margin-bottom: 16px;
-}
-.divider::before,
-.divider::after {
-  content: '';
-  flex: 1;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
-}
-.divider span {
-  padding: 0 10px;
-  color: rgba(0, 0, 0, 0.6);
-  font-size: 14px;
-}
-
-.btn-google {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: white;
-  border: 1px solid rgba(0, 0, 0, 0.15);
-  border-radius: 24px;
-  padding: 12px;
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-  margin-bottom: 16px;
-}
 
 .login-link {
   text-align: center;
@@ -108,4 +73,139 @@ input[type="password"] {
 }
 .login-link a:hover {
   text-decoration: underline;
+}
+/*------------------------------------------------------step2 */
+.signup-step2 {
+  background-color: white;
+  padding: 24px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+
+
+  h1 {
+    font-size: 32px;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.9);
+    margin-bottom: 24px;
+    text-align: center;
+  }
+
+}
+.logo {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.nameForm {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 16px;
+  border: 1px solid rgba(0, 0, 0, 0.6);
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+
+.nameFormBtn {
+  width: 100%;
+  padding: 12px;
+  background-color: #0a66c2;
+  color: white;
+  border: none;
+  border-radius: 24px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.nameFormBtn:hover {
+  background-color: #004182;
+}
+.login-link {
+  text-align: center;
+  margin-top: 16px;
+  font-size: 14px;
+}
+.login-link a {
+  color: #0a66c2;
+  text-decoration: none;
+  font-weight: 600;
+}
+.login-link a:hover {
+  text-decoration: underline;
+}
+
+/*--------------------------------------------------------------------- step 3*/
+
+.signup-step3 {
+  background-color: white;
+  padding: 24px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+
+}
+
+
+.logo {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+
+.logo img {
+  width: 84px;
+  height: 21px;
+}
+
+h1 {
+  font-size: 32px;
+  line-height: 1.25;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.9);
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+label {
+  display: block;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.6);
+  margin-bottom: 4px;
+}
+
+label .required {
+  color: #0a66c2;
+  margin-left: 2px;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.6);
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+.continueBtn {
+  width: 100%;
+  padding: 12px;
+  background-color: #0a66c2;
+  color: white;
+  border: none;
+  border-radius: 24px;
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 16px;
+  cursor: pointer;
+}
+.continueBtn:hover {
+  background-color: #004182;
 }
