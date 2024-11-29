@@ -1,0 +1,193 @@
+.ads-container {
+  max-width: 1100px;
+  margin: 100px auto;
+  display: flex;
+  align-items: start;
+  gap: 40px;
+}
+
+/*----------------*/
+.menu-card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.08);
+  width: 280px;
+}
+
+.menu-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-item {
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: rgba(0, 0, 0, 0.9);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.menu-item:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+.menu-item i {
+  width: 20px;
+  height: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.divider {
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.08);
+  margin: 4px 0;
+}
+
+.post-job {
+  color: #0a66c2;
+}
+
+/*------------------------------------------------------------*/
+.ads {
+  width: 800px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.08);
+  padding: 24px;
+}
+
+.ads-header {
+  margin-bottom: 20px;
+}
+
+.ads-header h1 {
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.9);
+  margin-bottom: 4px;
+}
+
+.ads-header p {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.job-card {
+  position: relative;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.job-card:last-child {
+  border-bottom: none;
+}
+
+.company-logo {
+  width: 56px;
+  height: 56px;
+  border-radius: 4px;
+  margin-right: 16px;
+  float: left;
+}
+
+.job-content {
+  margin-left: 72px;
+  padding-right: 48px;
+}
+
+.job-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #0a66c2;
+  text-decoration: none;
+  margin-bottom: 4px;
+  display: inline-block;
+}
+
+.job-title:hover {
+  text-decoration: underline;
+}
+
+.company-name {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.6);
+  margin-bottom: 4px;
+}
+
+.job-location {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.6);
+  margin-bottom: 8px;
+}
+
+.connections {
+  display: flex;
+  align-items: center;
+  margin-top: 12px;
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.connection-avatar {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.job-apply-button {
+  display: inline-flex;
+  align-items: center;
+  color: rgba(0, 0, 0, 0.6);
+  background: none;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+  margin-top: 8px;
+}
+
+.job-apply-button:hover {
+  background-color: rgba(0, 0, 0, 0.08);
+}
+
+.linkedin-icon {
+  width: 16px;
+  height: 16px;
+  margin-right: 4px;
+}
+
+.job-close-button {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 4px;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.job-close-button:hover {
+  background-color: rgba(0, 0, 0, 0.08);
+  border-radius: 50%;
+}
+
+.job-view-all {
+  display: block;
+  text-align: center;
+  padding: 16px;
+  color: rgba(0, 0, 0, 0.6);
+  text-decoration: none;
+  font-weight: 600;
+  margin-top: 16px;
+}
+
+.job-view-all:hover {
+  background-color: rgba(0, 0, 0, 0.08);
+}
