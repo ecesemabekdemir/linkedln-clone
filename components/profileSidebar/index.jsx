@@ -1,6 +1,12 @@
+import { createClient } from "@/utils/supabase/server";
 import "./profileSidebar.css";
 
-export default function ProfileSidebar() {
+export default async function ProfileSidebar() {
+  const supabase = createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  console.log(user);
   return (
     <>
       <div className="sidebar-profile-card">
@@ -9,8 +15,12 @@ export default function ProfileSidebar() {
         </div>
 
         <div className="sidebar-profile-info">
-          <h2 className="sidebar-profile-name">Ece Sema Bekdemir</h2>
-          <p className="sidebar-profile-title">Frontend Developer</p>
+          <h2 className="sidebar-profile-name">
+            {user?.user_metadata?.firstName} {user?.user_metadata?.lastName}
+          </h2>
+          <p className="sidebar-profile-title">
+            {user?.user_metadata?.headline}
+          </p>
         </div>
 
         <div className="sidebar-profile-stats">

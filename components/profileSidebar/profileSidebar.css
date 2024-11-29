@@ -80,3 +80,19 @@
 .sidebar-saved-items:hover {
   background-color: rgba(0, 0, 0, 0.08);
 }
+
+/* -------------------------------------tablet */
+@media (max-width: 768px) {
+  .sidebar-profile-card {
+display: none;
+  }
+}
+
+
+
+/* -------------------------------------mobile */
+@media (max-width: 480px) {
+  .sidebar-profile-card {
+    display: none;
+      }
+}
