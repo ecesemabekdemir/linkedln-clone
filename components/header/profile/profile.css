@@ -1,6 +1,6 @@
 .dropbtn {
   cursor: pointer;
-  background-color:  rgb(0 0 0 / .6);
+  background-color: rgb(0 0 0 / 0.6);
   color: #f2f4fe;
   width: 20px;
   height: 20px;
@@ -10,7 +10,7 @@
 }
 
 .dropbtn:hover {
-  background-color:rgb(0 0 0 / .6);
+  background-color: rgb(0 0 0 / 0.6);
 }
 
 .profile-dropdown {
@@ -83,7 +83,6 @@
   font-size: 14px;
   cursor: pointer;
   margin-bottom: 8px;
-  
 }
 
 .dropdown-section {
@@ -105,7 +104,6 @@
   color: #666;
   text-decoration: none;
   font-size: 14px;
-
 }
 
 .dropdown-section-nav:hover {
@@ -125,4 +123,18 @@
 
 .logout-btn:hover {
   text-decoration: underline;
+}
+
+/* -------------------------------------tablet */
+@media (max-width: 768px) {
+  .dropbtn {
+    display: none;
+  }
+}
+
+/* -------------------------------------mobile */
+@media (max-width: 480px) {
+  .dropbtn {
+    display: none;
+  }
 }

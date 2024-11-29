@@ -2,15 +2,15 @@
 import { useState } from "react";
 import "./profile.css";
 import Link from "next/link";
+import { signOut } from "@/action/auth";
 
-export default function Profile() {
+export default function Profile({ user }) {
   const [show, setShow] = useState(false);
+  console.log(user);
 
   return (
     <div className="profile-dropdown">
-      <button onClick={() => setShow(!show)} className="dropbtn">
-        <span class="icon profile"></span>
-      </button>
+      <button onClick={() => setShow(!show)} className="dropbtn"></button>
       {show && (
         <div className="profile-dropdown-content">
           <div className="container-profile-drop">
@@ -18,8 +18,13 @@ export default function Profile() {
               <div className="profile">
                 <div className="profile-image"></div>
                 <div>
-                  <h1 className="profile-name">Ece sema bekdemir</h1>
-                  <h1 className="profile-status">Frontend Developer</h1>
+                  <h1 className="profile-name">
+                    {user?.user_metadata?.firstName}
+                    {user?.user_metadata?.lastName}
+                  </h1>
+                  <h1 className="profile-status">
+                    {user?.user_metadata?.headline}
+                  </h1>
                 </div>
               </div>
               <Link href="/linkedln" className="nav-link">
@@ -54,7 +59,9 @@ export default function Profile() {
                 </a>
               </div>
             </div>
-            <button className="logout-btn">Oturumu Kapat</button>
+            <button onClick={() => signOut()} className="logout-btn">
+              Oturumu Kapat
+            </button>
           </div>
         </div>
       )}

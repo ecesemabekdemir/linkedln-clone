@@ -6,7 +6,7 @@ import MessageIcon from "@/svgs/mesagge";
 import NotificationIcon from "@/svgs/notificationIcon";
 import Link from "next/link";
 
-export default function Nav() {
+export default function Nav({ user }) {
   return (
     <>
       <ul className="nav-list">
@@ -19,20 +19,20 @@ export default function Nav() {
           </Link>
         </li>
         <li className="nav-item">
-          <a href="#" className="nav-link">
+          <Link href="/network" className="nav-link">
             <span className="icon">
               <NetworkIcon />
             </span>
             <span className="label">Ağım</span>
-          </a>
+          </Link>
         </li>
         <li className="nav-item">
-          <a href="#" className="nav-link">
+          <Link href="/ads" className="nav-link">
             <span className="icon">
               <Ads />
             </span>
             <span className="label">İş İlanları</span>
-          </a>
+          </Link>
         </li>
         <li className="nav-item">
           <a href="#" className="nav-link">
@@ -51,12 +51,13 @@ export default function Nav() {
             <span className="label">Bildirimler</span>
           </a>
         </li>
-        <li class="nav-item">
+        <li className="nav-item">
           <a href="#" className="nav-link">
-            <span class="label">
-              <Profile />
+            <span className="icon">
+              <span className="icon profile"></span>
             </span>
-            <span className="label">
+            <Profile user={user} />
+            <span className="label flex">
               Ben
               <svg
                 width="16"
