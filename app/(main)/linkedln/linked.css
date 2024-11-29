@@ -1,0 +1,8 @@
+.profilepage-content {
+  max-width: 1128px;
+  display: flex;
+  align-items: start;
+  gap: 24px;
+  margin: 0 auto;
+  padding: 0 16px;
+}

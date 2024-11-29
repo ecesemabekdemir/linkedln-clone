@@ -1,19 +1,21 @@
-import News from "@/components/haberle";
 import Header from "@/components/header";
 import PostCreator from "@/components/postCreator";
-import Posts from "@/components/posts";
 import ProfileSidebar from "@/components/profileSidebar";
+import SaveUser from "@/components/save-users";
+import PostDetailPage from "./posts/[id]/page";
 
-export default function Home() {
+export default async function Home() {
   return (
-    <div className="container">
+    <>
       <Header />
-      <ProfileSidebar />
-      <div>
-        <PostCreator />
-        <Posts />
+      <div className="container">
+        <ProfileSidebar />
+        <div className="content-container">
+          <PostCreator />
+          <PostDetailPage />
+        </div>
+        <SaveUser />
       </div>
-      <News />
-    </div>
+    </>
   );
 }
