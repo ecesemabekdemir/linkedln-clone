@@ -316,6 +316,7 @@ h1 {
   display: flex;
   align-items: center;
   gap: 4px;
+  text-transform: uppercase;
 }
 
 .close-button button {

@@ -1,4 +1,14 @@
-export default function ProfileHeader() {
+"use server";
+
+import { createClient } from "@/utils/supabase/server";
+
+export default async function ProfileHeader() {
+  const supabase = createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  console.log(user);
+
   return (
     <>
       <div className="card">
@@ -6,10 +16,12 @@ export default function ProfileHeader() {
           <div className="profile-img"></div>
         </div>
         <div className="content">
-          <h1>Ece Sema Bekdemir</h1>
-          <p className="title">Frontend Developer</p>
+          <h1>
+            {user?.user_metadata?.firstName} {user?.user_metadata?.lastName}
+          </h1>
+          <p className="title">{user?.user_metadata?.headline}</p>
           <p className="location">
-            İstanbul, İstanbul, Türkiye · <a href="#">İletişim bilgileri</a>
+            {user?.user_metadata?.location}· <a href="#">İletişim bilgileri</a>
           </p>
           <p className="website">
             <a href="https://ecesemabekdemir.com.tr/" target="blank">

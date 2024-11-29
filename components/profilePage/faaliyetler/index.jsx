@@ -1,3 +1,4 @@
+"use client";
 import ModalAddButton from "../modalAddBtn";
 
 export default function Activities({ isModalOpen }) {
