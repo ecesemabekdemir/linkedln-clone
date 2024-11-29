@@ -1,6 +1,5 @@
-
 .post-card {
-  max-width: 750px;
+  max-width: 800px;
   margin: 0 auto;
   background-color: #ffffff;
   border-radius: 8px;
@@ -47,7 +46,7 @@
   color: rgba(0, 0, 0, 0.6);
 }
 
-.close-button {
+.delete-button {
   background: none;
   border: none;
   cursor: pointer;
@@ -64,7 +63,7 @@
   padding: 25px 10px;
 }
 
-.blog-preview-content  {
+.blog-preview-content {
   background-color: #f9fafb;
   color: rgba(0, 0, 0, 0.6);
 }
@@ -101,4 +100,21 @@
 
 .action-button:hover {
   background-color: rgba(0, 0, 0, 0.08);
+}
+
+/* -------------------------------------tablet */
+@media (width < 768px)  {
+  .post-card {
+    margin: 0 auto;
+  }
+  .action-button span {
+    display: none;
+  }
+}
+
+/* -------------------------------------mobile */
+@media (width< 375px) {
+  .action-button span {
+    display: none;
+  }
 }

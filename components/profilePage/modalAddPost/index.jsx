@@ -1,5 +1,21 @@
 "use client";
+
+import { useEffect, useState } from "react";
+import { createClient } from "@/utils/supabase/client";
+import { SavePost } from "./action";
+
 export default function ModalAddPost({ isModalOpen, closeModal }) {
+  const [user, setUser] = useState([]);
+  useEffect(() => {
+    async function getUser() {
+      const supabase = createClient();
+      const { data } = await supabase.auth.getUser();
+      setUser(data.user);
+      console.log(data);
+    }
+    getUser();
+  }, []);
+
   return (
     <>
       {isModalOpen && (
@@ -10,7 +26,8 @@ export default function ModalAddPost({ isModalOpen, closeModal }) {
                 <div className="user-avatar"></div>
                 <div className="user-details">
                   <div className="user-name">
-                    Ece Sema Bekdemir
+                    {user?.user_metadata?.firstName}
+                    {user?.user_metadata?.lastName}
                     <svg
                       width="16"
                       height="16"
@@ -27,22 +44,24 @@ export default function ModalAddPost({ isModalOpen, closeModal }) {
               </button>
             </div>
 
-            <div className="modal-body">
-              <textarea
-                className="modal-content"
-                placeholder="Ne hakkında konuşmak istiyorsunuz?"
-              ></textarea>
-            </div>
-
-            <div className="modal-footer">
-              <div className="toolbar">
-                <button className="tool-button">😊</button>
-                <button className="tool-button">🖼️</button>
-                <button className="tool-button">📅</button>
-                <button className="tool-button">➕</button>
+            <form action={SavePost}>
+              <div className="modal-body">
+                <textarea
+                  name="content"
+                  className="modal-content"
+                  placeholder="Ne hakkında konuşmak istiyorsunuz?"
+                ></textarea>
               </div>
-              <button className="send-button">Gönder</button>
-            </div>
+              <div className="modal-footer">
+                <div className="toolbar">
+                  <button className="tool-button">😊</button>
+                  <button className="tool-button">🖼️</button>
+                  <button className="tool-button">📅</button>
+                  <button className="tool-button">➕</button>
+                </div>
+                <button className="send-button">Gönder</button>
+              </div>
+            </form>
           </div>
         </div>
       )}
