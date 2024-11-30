@@ -35,6 +35,7 @@ export default function Ads() {
         </div>
         <div className="job-card">
           <button className="job-close-button">✕</button>
+          <div className="company-logo "></div>
           <div className="job-content">
             <a href="#" class="job-title">
               VoIP/DevOps Engineer

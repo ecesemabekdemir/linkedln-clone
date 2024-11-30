@@ -92,6 +92,7 @@
   border-radius: 4px;
   margin-right: 16px;
   float: left;
+  border: 1px solid gray;
 }
 
 .job-content {
