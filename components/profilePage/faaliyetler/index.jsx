@@ -1,7 +1,26 @@
-"use client";
+"use server";
+import { createClient } from "@/utils/supabase/server";
 import ModalAddButton from "../modalAddBtn";
 
-export default function Activities({ isModalOpen }) {
+export default async function Activities({ isModalOpen, content, user_email }) {
+  const supabase = createClient();
+
+  // login olan kullanıcı bilgilerini alıp ona göre işlem yapıyoruz
+  const {
+    data: { user },
+    error: authError,
+  } = await supabase.auth.getUser();
+
+  if (authError || !user) {
+    return <div>Lütfen giriş yapınız.</div>;
+  }
+
+  // Kullanıcının gönderilerini al
+  const { data: posts, error: postsError } = await supabase
+    .from("posts")
+    .select("*")
+    .eq("user_email", user.email);
+
   return (
     <>
       <div className="activity-card">
@@ -12,67 +31,36 @@ export default function Activities({ isModalOpen }) {
           </div>
           <ModalAddButton isModalOpen={isModalOpen} />
         </div>
-
         <div className="tabs">
           <button className="tab active">Gönderiler</button>
           <button className="tab">Yorumlar</button>
           <button className="tab">Resimler</button>
           <button className="tab">Belgeler</button>
         </div>
-
         <div className="posts">
-          <div className="post">
-            <div className="post-header">
-              <span>Ece Sema Bekdemir bunu yayınladı</span>
-              <span>•</span>
-              <span>1 ay</span>
+          {(!posts || posts.length === 0) && <p>Henüz bir gönderiniz yok.</p>}
+          {posts?.map((post, i) => (
+            <div className="post">
+              <div className="post-header">
+                <div key={i}>
+                  <span>
+                    <span>
+                      {user.user_metadata?.firstName}{" "}
+                      {user.user_metadata?.lastName}
+                    </span>{" "}
+                    bunu yayınladı
+                  </span>{" "}
+                  <span>•</span>{" "}
+                  <span>{new Date(post.created_at).toLocaleDateString()}</span>
+                </div>
+              </div>
+              <div className="post-content">{post.content}</div>
+              <div className="post-stats">
+                <div className="reactions">👍 {post.likes || 0}</div>
+                <div>{post.shares || 1} paylaşım</div>
+              </div>
             </div>
-            <div className="post-content">
-              X Akademi Projesi Tamamlandı! Muhammed Baki Çağlayan ile birlikte
-              X Akademi adında bir platform oluşturduk. Bu projede login ve
-              signup özelliklerini entegre ettik. Rolü admin olan kullanıcı,
-              öğrenci ekleme, silme ve düzenleme gi...
-            </div>
-            <div className="post-stats">
-              <div className="reactions">👍 24</div>
-              <div>1 paylaşım</div>
-            </div>
-          </div>
-
-          <div className="post">
-            <div className="post-header">
-              <span>Ece Sema Bekdemir bunu yayınladı</span>
-              <span>•</span>
-              <span>1 ay</span>
-            </div>
-            <div className="post-content">
-              Bu hafta, Doğa Savaş ile birlikte Next.js kullanarak
-              geliştirdiğimiz öğrenci kayıt formu projesini başarıyla
-              tamamladık! Projemizde...
-            </div>
-            <div claclassNamess="post-stats">
-              <div className="reactions">👍 23</div>
-              <div>1 paylaşım</div>
-            </div>
-          </div>
-
-          <div className="post">
-            <div className="post-header">
-              <span>Ece Sema Bekdemir bunu yayınladı</span>
-              <span>•</span>
-              <span>1 ay</span>
-            </div>
-            <div className="post-content">
-              Yeni Proje Güncellemesi: React'ten Next.js'e Geçiş! Son dönemde
-              üzerinde çalıştığım quiz uygulamasında büyük bir adım attık...
-              Daha önce React ile geliştirdiğimiz ve 4 farklı kategoriden oluşan
-              quiz projemizi, Next.js'e taşıdık...
-            </div>
-            <div className="post-stats">
-              <div className="reactions">👍 26</div>
-              <div>1 paylaşım</div>
-            </div>
-          </div>
+          ))}
         </div>
 
         <a href="#" className="show-more">
