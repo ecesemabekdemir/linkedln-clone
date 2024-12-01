@@ -3,14 +3,12 @@ import "./posts.css";
 import DeletePostBtn from "../delete-post-btn";
 import NewComment from "../newComment";
 
-export default async function Posts({ content, user_email, id }) {
+export default async function Posts({ dataId, content, user_email, id }) {
   const supabase = createClient();
   let { data: users, error } = await supabase
     .from("users")
     .select("*")
-    // Filters
     .eq("email", user_email);
-  console.log("userssssssssssss", users);
 
   return (
     <div className="post-card">
@@ -46,19 +44,7 @@ export default async function Posts({ content, user_email, id }) {
       </div>
 
       <div className="action-buttons">
-        <button className="action-button">
-          👍
-          <span>Beğen</span>
-        </button>
-        <NewComment />
-        <button className="action-button">
-          🔄
-          <span> Paylaş</span>
-        </button>
-        <button className="action-button">
-          📤
-          <span>Gönder</span>
-        </button>
+        <NewComment users={users} PostId={id} />
       </div>
     </div>
   );

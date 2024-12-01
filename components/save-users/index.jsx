@@ -13,7 +13,6 @@ export default async function SaveUser() {
     return array;
   };
   let user = shuffle(users);
-  console.log("userlarrrr", user);
 
   return (
     <div className="save-users-container">

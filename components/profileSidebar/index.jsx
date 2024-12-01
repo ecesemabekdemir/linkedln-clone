@@ -6,7 +6,7 @@ export default async function ProfileSidebar() {
   const {
     data: { user },
   } = await supabase.auth.getUser();
-  console.log(user);
+
   return (
     <>
       <div className="sidebar-profile-card">
