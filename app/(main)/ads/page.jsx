@@ -1,6 +1,16 @@
+"use server";
 import Link from "next/link";
 import "./ads.css";
-export default function Ads() {
+import { createClient } from "@/utils/supabase/server";
+import DeleteJobsBtn from "@/components/deleteJobsBtn";
+
+export default async function Ads() {
+  const supabase = createClient();
+
+  const { data, error } = await supabase.from("jobs").select("*");
+
+  console.log("jobsDataaa", data);
+
   return (
     <div className="ads-container">
       <div className="menu-card">
@@ -33,23 +43,23 @@ export default function Ads() {
           <h1>Ağınızda işe alım yapıyor</h1>
           <p>Ağınızdaki kişilerin işe alım yaptığı işler</p>
         </div>
-        <div className="job-card">
-          <button className="job-close-button">✕</button>
-          <div className="company-logo "></div>
-          <div className="job-content">
-            <a href="#" class="job-title">
-              VoIP/DevOps Engineer
-            </a>
-            <div className="company-name">
-              Turkcell Global Bilgi · İstanbul, Türkiye (Hybrid)
+        {data?.map((job, i) => (
+          <div key={i} className="job-card">
+            <DeleteJobsBtn id={job.id} />
+            <div className="company-logo"></div>
+            <div className="job-content">
+              <a href="#" className="job-title">
+                {job.title}
+              </a>
+              <div className="company-name">{job.company_name}</div>
+              <div className="job-location">{job.location}</div>
+              <div className="connections">
+                İşe alım takımı ile 20 ortak bağlantı
+              </div>
+              <button className="job-apply-button">Kolay Başvuru</button>
             </div>
-            <div className="job-location">İstanbul, Türkiye (Hybrid)</div>
-            <div className="connections">
-              İşe alım takimi ile 20 ortak bağlantı
-            </div>
-            <button className="job-apply-button">Kolay Başvuru</button>
           </div>
-        </div>
+        ))}
         <a href="#" className="job-view-all">
           Tümünü gör →
         </a>

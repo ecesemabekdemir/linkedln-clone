@@ -1,42 +1,75 @@
+"use client";
+import { useFormState } from "react-dom";
+import { SaveJobs } from "./action";
 import "./newAds.css";
+import { useEffect, useRef } from "react";
 export default function NewAds() {
+  const [state, action] = useFormState(SaveJobs, {
+    message: null,
+    error: null,
+  });
+  const formRef = useRef();
+  useEffect(() => {
+    if (state?.message) {
+      formRef.current.reset();
+    }
+  }, [state]);
+
   return (
     <div className="bg">
       <div className="newads-card">
         <h1>Hemen bir iş ilanı yayınlayın</h1>
-        <form>
+        <form ref={formRef} action={action}>
           <label for="job-title">İş unvanı</label>
           <input
+            name="title"
             type="text"
             id="job-title"
             placeholder="İşe alım yaptığınız unvanı ekleyin"
           />
           <label for="company">Şirket</label>
-          <input type="text" id="company" />
+          <input name="company_name" type="text" id="company" />
           <label for="workplace">İşyeri politikası</label>
-          <select id="workplace">
-            <option value="">İş yerinde</option>
+          <select
+            onChange={(e) => e.target.value}
+            defaultValue="default"
+            name="description"
+            id="workplace"
+          >
+            <option value="default" disabled>
+              Seçiniz
+            </option>
+            <option value="onsite">İş yerinde</option>
             <option value="hybrid">Hibrit</option>
             <option value="remote">Uzaktan</option>
           </select>
           <label for="location">İşin konumu</label>
           <input
+            name="location"
             type="text"
             id="location"
             value="Istanbul, Istanbul, Türkiye"
           />
           <label for="job-type">İş türü</label>
-          <select id="job-type">
+          <select
+            onChange={(e) => e.target.value}
+            defaultValue="default"
+            name="type"
+            id="job-type"
+          >
+            <option value="default" disabled>
+              Seçiniz
+            </option>
             <option value="full-time">Tam Zamanlı</option>
             <option value="part-time">Yarı Zamanlı</option>
             <option value="contract">Sözleşmeli</option>
           </select>
           <button type="submit">Ücretsiz olarak başlayın</button>
         </form>
-        <p className="footer">
-          Ücretsiz iş ilanları için bazı limitler olabilir.
+        <div className="footer">
+          <p> Ücretsiz iş ilanları için bazı limitler olabilir.</p>
           <p>Politikamızı görüntüleyin</p>
-        </p>
+        </div>
       </div>
     </div>
   );
