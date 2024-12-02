@@ -16,7 +16,7 @@ export default async function ProfilePage() {
   const { data: userPosts } = await supabase
     .from("posts")
     .select("*")
-    .eq("user_email", user.email);
+    .eq("user_id", user?.id);
 
   return (
     <div className="profile-container">

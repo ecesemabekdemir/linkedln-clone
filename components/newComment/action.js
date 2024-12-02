@@ -17,7 +17,16 @@ export async function SaveComment(prev, formData) {
 
   const { data, error } = await supabase
     .from("comments")
-    .insert([{ content, user_id: user.id, post_id: postId }])
+    .insert([
+      {
+        content,
+        user_id: user.id,
+        post_id: postId,
+        firstName: user?.user_metadata.firstName,
+        lastName: user?.user_metadata.lastName,
+        headline: user?.user_metadata.headline,
+      },
+    ])
     .select()
     .single();
   // data dizi döndüğü için single ile tekil dönmesini sağlıyoruz.

@@ -11,26 +11,26 @@ export default async function Header() {
   const {
     data: { user },
   } = await supabase.auth.getUser();
-  console.log(user);
+  console.log("header user", user);
   return (
     <div className="headerContainer">
       <div className="header">
-        <div class="nav-left">
-          <a href="/" class="logo">
+        <div className="nav-left">
+          <a href="/" className="logo">
             <Logo />
           </a>
           <Search />
         </div>
 
-        <div class="main-nav">
+        <div className="main-nav">
           <Nav user={user} />
         </div>
-        <div class="nav-right">
-          <button class="menu-button">
+        <div className="nav-right">
+          <button className="menu-button">
             <span>
               <Icon />
             </span>
-            <span class="label">
+            <span className="label">
               İş için <OkIcon />
             </span>
           </button>

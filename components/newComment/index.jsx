@@ -23,15 +23,13 @@ export default function NewComment({ PostId, users }) {
     }
   }, [state]);
 
-  console.log("users", users);
-
   // commentleri getir
 
   useEffect(() => {
     async function getComments() {
       const { data, error } = await supabase
         .from("comments")
-        .select()
+        .select("*")
         .eq("post_id", PostId);
 
       if (data) {
@@ -70,48 +68,50 @@ export default function NewComment({ PostId, users }) {
         </div>
 
         {isCommentOpen && (
-          <form
-            action={action}
-            ref={formRef}
-            className={`comment-input ${isCommentOpen ? "open" : ""}`}
-          >
-            <div className="avatar"></div>
-            <div className="input-wrapper">
-              <input name="content" type="text" placeholder="Yorum ekle..." />
-              <input name="postId" type="hidden" value={PostId} />
-              <div className="input-actions">
-                <button className="icon-btn">
-                  <span className="icon smile"></span>
-                </button>
-                <button className="icon-btn">
-                  <span className="icon image"></span>
-                </button>
-              </div>
-            </div>
-          </form>
-        )}
-      </div>
-      <div className="getCommentsContainer">
-        {comment?.map((x) => (
-          <div key={x.id}>
-            <div className="get-comments-header">
-              <div className="profile-image"> </div>
-              <div className="comment-info">
-                <a href="#" class="author-name">
-                  {/* {user?.user_metadata?.firstName}{" "}
-                  {user?.user_metadata?.lastName} */}
-                </a>
-                <div className="post-meta">
-                  <span>headline</span>
+          <>
+            <form
+              action={action}
+              ref={formRef}
+              className={`comment-input ${isCommentOpen ? "open" : ""}`}
+            >
+              <div className="avatar"></div>
+              <div className="input-wrapper">
+                <input name="content" type="text" placeholder="Yorum ekle..." />
+                <input name="postId" type="hidden" value={PostId} />
+                <div className="input-actions">
+                  <button className="icon-btn">
+                    <span className="icon smile"></span>
+                  </button>
+                  <button className="icon-btn">
+                    <span className="icon image"></span>
+                  </button>
                 </div>
               </div>
-              <div className="more-options">•••</div>
+              <button type="Submit">Gönder</button>
+            </form>
+            <div className="getCommentsContainer">
+              {comment?.map((x) => (
+                <div key={x.id}>
+                  <div className="get-comments-header">
+                    <div className="profile-image"> </div>
+                    <div className="comment-info">
+                      <a href="#" class="author-name">
+                        {x?.firstName} {x?.lastName}
+                      </a>
+                      <div className="post-meta">
+                        <span>{x?.headline}</span>
+                      </div>
+                    </div>
+                    <div className="more-options">•••</div>
+                  </div>
+                  <div className="comment-content">
+                    <p> {x.content}</p>
+                  </div>
+                </div>
+              ))}
             </div>
-            <div className="comment-content">
-              <p> {x.content}</p>
-            </div>
-          </div>
-        ))}
+          </>
+        )}
       </div>
     </div>
   );

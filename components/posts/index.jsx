@@ -3,12 +3,12 @@ import "./posts.css";
 import DeletePostBtn from "../delete-post-btn";
 import NewComment from "../newComment";
 
-export default async function Posts({ dataId, content, user_email, id }) {
+export default async function Posts({ dataId, content, user_id, id }) {
   const supabase = createClient();
   let { data: users, error } = await supabase
     .from("users")
     .select("*")
-    .eq("email", user_email);
+    .eq("user_id", user_id);
 
   return (
     <div className="post-card">

@@ -47,7 +47,7 @@ export async function SaveUsers(formData) {
   const {
     data: { user },
   } = await supabase.auth.getUser();
-  console.log(user);
+
   const { data, error } = await supabase
     .from("users")
     .insert([

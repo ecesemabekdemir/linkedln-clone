@@ -7,7 +7,6 @@ export default async function PostDetailPage() {
   const supabase = createClient();
 
   const { data, error } = await supabase.from("posts").select("*");
-  console.log("postssss", data);
 
   // const { data: postsLike } = await supabase
   //   .from("postsLike")

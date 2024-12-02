@@ -19,7 +19,7 @@ export default async function Activities({ isModalOpen, content, user_email }) {
   const { data: posts, error: postsError } = await supabase
     .from("posts")
     .select("*")
-    .eq("user_email", user.email);
+    .eq("user_id", user.id);
 
   return (
     <>

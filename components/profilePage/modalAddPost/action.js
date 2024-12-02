@@ -16,10 +16,10 @@ export async function SavePost(formData) {
     .from("posts")
     .insert({
       content,
-      user_email: user.user_metadata.email,
+      user_id: user.id,
     })
-    .select()
-    .single();
+    .select();
+
   // data dizi döndüğü için single ile tekil dönmesini sağlıyoruz.
 
   if (error) {

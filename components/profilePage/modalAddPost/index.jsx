@@ -11,7 +11,6 @@ export default function ModalAddPost({ isModalOpen, closeModal }) {
       const supabase = createClient();
       const { data } = await supabase.auth.getUser();
       setUser(data.user);
-      console.log(data);
     }
     getUser();
   }, []);
@@ -26,8 +25,8 @@ export default function ModalAddPost({ isModalOpen, closeModal }) {
                 <div className="user-avatar"></div>
                 <div className="user-details">
                   <div className="user-name">
-                    {user?.user_metadata?.firstName}
-                    {user?.user_metadata?.lastName}
+                    {user?.firstName}
+                    {user?.lastName}
                     <svg
                       width="16"
                       height="16"
