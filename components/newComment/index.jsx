@@ -5,10 +5,12 @@ import { useEffect, useRef, useState } from "react";
 import { useFormState } from "react-dom";
 import { SaveComment } from "./action";
 import { createClient } from "@/utils/supabase/client";
+import DeleteCommentBtn from "../commentDeleteBtn";
 
 export default function NewComment({ PostId, users }) {
   const [comment, setComment] = useState([]);
   const [isCommentOpen, setIsCommentOpen] = useState(false);
+  const [show, setShow] = useState(false);
   const [state, action] = useFormState(SaveComment, {
     message: null,
     error: null,
@@ -87,7 +89,9 @@ export default function NewComment({ PostId, users }) {
                   </button>
                 </div>
               </div>
-              <button type="Submit">Gönder</button>
+              <button className="commentSend" type="Submit">
+                Gönder
+              </button>
             </form>
             <div className="getCommentsContainer">
               {comment?.map((x) => (
@@ -102,7 +106,31 @@ export default function NewComment({ PostId, users }) {
                         <span>{x?.headline}</span>
                       </div>
                     </div>
-                    <div className="more-options">•••</div>
+                    <div className="more-option-dropdown">
+                      <button
+                        onClick={() => setShow(!show)}
+                        className="dropdown-trigger"
+                      >
+                        <div className="dots">
+                          <span></span>
+                          <span></span>
+                          <span></span>
+                        </div>
+                      </button>
+                      {show && (
+                        <div className="dropdown-content">
+                          {/* <a href="#" className="dropdown-item">
+                            Yorum yapmak için linki kopyala
+                          </a> */}
+                          {/* <a href="#" className="dropdown-item">
+                            Bildir
+                          </a> */}
+                          <a href="#" className="dropdown-item">
+                            <DeleteCommentBtn id={x.id} />
+                          </a>
+                        </div>
+                      )}
+                    </div>
                   </div>
                   <div className="comment-content">
                     <p> {x.content}</p>
