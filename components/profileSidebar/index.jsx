@@ -3,6 +3,7 @@ import "./profileSidebar.css";
 
 export default async function ProfileSidebar() {
   const supabase = createClient();
+  let { data: users } = await supabase.from("users").select("*");
   const {
     data: { user },
   } = await supabase.auth.getUser();
@@ -26,11 +27,11 @@ export default async function ProfileSidebar() {
         <div className="sidebar-profile-stats">
           <div className="sidebar-stat-item">
             <span className="sidebar-stat-label">Profil görüntüleyenler</span>
-            <span className="sidebar-stat-value">191</span>
+            <span className="sidebar-stat-value">{users.length}</span>
           </div>
           <div className="sidebar-stat-item">
             <span className="sidebar-stat-label">Gönderi gösterimi sayısı</span>
-            <span className="sidebar-stat-value">275</span>
+            <span className="sidebar-stat-value">{users.length}</span>
           </div>
         </div>
         <div className="sidebar-saved-items">Kaydedilen öğeler</div>

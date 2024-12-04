@@ -16,7 +16,7 @@ export default function PostCreator() {
     <>
       <div className="post-creator">
         <div className="post-input">
-          <div className="profile-pic"></div>
+          <div className="avatar"></div>
           <button onClick={openModal} className="btn-field">
             Gönderi başlatın
           </button>

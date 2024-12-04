@@ -8,9 +8,7 @@ export default async function Ads() {
   const supabase = createClient();
 
   const { data, error } = await supabase.from("jobs").select("*");
-
-  console.log("jobsDataaa", data);
-
+  let { data: users } = await supabase.from("users").select("*");
   return (
     <div className="ads-container">
       <div className="menu-card">
@@ -54,7 +52,7 @@ export default async function Ads() {
               <div className="company-name">{job.company_name}</div>
               <div className="job-location">{job.location}</div>
               <div className="connections">
-                İşe alım takımı ile 20 ortak bağlantı
+                İşe alım takımı ile {users.length} ortak bağlantı
               </div>
               <button className="job-apply-button">Kolay Başvuru</button>
             </div>

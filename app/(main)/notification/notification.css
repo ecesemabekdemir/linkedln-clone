@@ -1,0 +1,94 @@
+.notification-container {
+  max-width: 600px;
+  margin: 100px auto;
+}
+
+.nav-tabs {
+  display: flex;
+  gap: 8px;
+  background: white;
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.tab {
+  padding: 8px 16px;
+  border-radius: 24px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #666;
+}
+
+.tab.active {
+  background-color: #006241;
+  color: white;
+}
+
+.feed-item {
+  background: white;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 8px;
+}
+
+.feed-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+
+
+
+.timestamp {
+  color: #666;
+  font-size: 14px;
+}
+
+.more-actions {
+  color: #666;
+  cursor: pointer;
+}
+
+.feed-content {
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+
+.engagement {
+  font-size: 13px;
+  color: #666;
+}
+
+.premium-banner {
+  background: white;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 8px;
+}
+
+.premium-button {
+  display: inline-block;
+  padding: 8px 16px;
+  border: 1px solid #0a66c2;
+  color: #0a66c2;
+  border-radius: 16px;
+  text-decoration: none;
+  font-size: 14px;
+  margin-top: 12px;
+}
+
+.premium-note {
+  font-size: 12px;
+  color: #666;
+  margin-top: 8px;
+}

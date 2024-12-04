@@ -43,13 +43,13 @@ export default function Nav({ user }) {
           </a>
         </li>
         <li className="nav-item">
-          <a href="#" className="nav-link">
+          <Link href="/notification" className="nav-link">
             <span className="icon notification">
               <NotificationIcon />
               <span className="notification-badge">3</span>
             </span>
             <span className="label">Bildirimler</span>
-          </a>
+          </Link>
         </li>
         <li className="nav-item">
           <a href="#" className="nav-link">

@@ -16,7 +16,7 @@ export default function Profile({ user }) {
           <div className="container-profile-drop">
             <div className="profile-drop">
               <div className="profile">
-                <div className="profile-image"></div>
+                <div className="avatar"></div>
                 <div>
                   <h1 className="profile-name">
                     {user?.user_metadata?.firstName}

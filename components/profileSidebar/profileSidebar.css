@@ -19,13 +19,12 @@
 .sidebar-profile-photo {
   width: 72px;
   height: 72px;
-  border: 1px solid lightgray;
   border-radius: 50%;
+  background: #eee;
   position: absolute;
   bottom: -36px;
   left: 50%;
   transform: translateX(-50%);
-  background-color: white;
   overflow: hidden;
 }
 
@@ -81,8 +80,8 @@
   background-color: rgba(0, 0, 0, 0.08);
 }
 
-/* -------------------------------------tablet */
-@media (max-width: 768px) {
+/* -------------------------------------tablet responsive gelcek */
+@media (width< 768px) {
   .sidebar-profile-card {
 display: none;
   }
@@ -90,8 +89,8 @@ display: none;
 
 
 
-/* -------------------------------------mobile */
-@media (max-width: 480px) {
+/* -------------------------------------mobile  responsive glicek*/
+@media (width< 375px) {
   .sidebar-profile-card {
     display: none;
       }

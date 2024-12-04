@@ -36,15 +36,10 @@
 .save-users-profile-info {
   display: flex;
   align-items: center;
+  gap: 8px;
   margin-bottom: 12px;
 }
-.save-users-img {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  border: 1px solid gray;
-  margin-right: 12px;
-}
+
 .save-users-profile-name {
   font-weight: bold;
 }
@@ -59,12 +54,10 @@
 }
 .save-users-action-button {
   left: auto;
-  width: 60%;
-  padding: 8px;
+  padding: 2px 4px;
   background-color: white;
   border: 1px solid #0a66c2;
   color: #0a66c2;
-  font-weight: bold;
   border-radius: 16px;
   cursor: pointer;
 }

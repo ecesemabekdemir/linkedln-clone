@@ -75,6 +75,14 @@ a {
   gap: 24px;
 }
 
+
+.avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #eee;
+}
+
 @media (width < 768px) {
   .container {
     display: flex;

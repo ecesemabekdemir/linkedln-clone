@@ -16,7 +16,6 @@ export default async function Home() {
           <PostDetailPage />
         </div>
         <div className="sidebar">
-          <SaveUser />
           <NewAdsSidebar />
         </div>
       </div>

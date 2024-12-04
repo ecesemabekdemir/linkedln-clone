@@ -28,7 +28,7 @@ export default async function SaveUser() {
       {user?.slice(0, 3).map((x, i) => (
         <div key={i} className="save-users-profile-card">
           <div className="save-users-profile-info">
-            <div className="save-users-img"></div>
+            <div className="avatar"></div>
             <div>
               <span className="save-users-profile-name">
                 {x.firstName} {x.lastName}
