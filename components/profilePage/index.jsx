@@ -18,6 +18,12 @@ export default async function ProfilePage() {
     .select("*")
     .eq("user_id", user?.id);
 
+  const { data: educations } = await supabase
+    .from("educationInfo")
+    .select("*")
+    .eq("user_id", user?.id);
+  console.log("education", educations);
+
   return (
     <div className="profile-container">
       <ProfileHeader />
@@ -27,7 +33,8 @@ export default async function ProfilePage() {
       ) : (
         <p>Henüz bir gönderiniz yok.</p>
       )}
-      <Education />
+
+      <Education educations={educations} />
     </div>
   );
 }

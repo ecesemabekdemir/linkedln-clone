@@ -2,7 +2,7 @@
 import { createClient } from "@/utils/supabase/server";
 import ModalAddButton from "../modalAddBtn";
 
-export default async function Activities({ isModalOpen, content, user_email }) {
+export default async function Activities({ isModalOpen }) {
   const supabase = createClient();
 
   // login olan kullanıcı bilgilerini alıp ona göre işlem yapıyoruz
