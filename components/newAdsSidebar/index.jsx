@@ -16,11 +16,11 @@ export default async function NewAdsSidebar() {
         </div>
         <p className="subtitle">Öne çıkan hikayeler</p>
 
-        {data?.map((x, i) => (
+        {data?.slice(0, 4).map((x, i) => (
           <div key={i} className="news-item">
             <h3 className="news-title">{x?.title}</h3>
             <p className="news-meta">
-              {new Date(x.created_at).toLocaleDateString()}• {users.length}
+              {new Date(x.created_at).toLocaleDateString()} • {users?.length}{" "}
               okuyucu
             </p>
           </div>

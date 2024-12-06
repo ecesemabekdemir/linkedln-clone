@@ -1,7 +1,7 @@
 "use server";
 
 import { createClient } from "@/utils/supabase/server";
-
+import { redirect } from "next/navigation";
 const supabase = createClient();
 
 export async function SaveJobs(prev, formData) {
@@ -36,5 +36,6 @@ export async function SaveJobs(prev, formData) {
   if (error) {
     console.log(error);
   }
-  console.log("datajob :>> ", data);
+
+  redirect("/ads");
 }
