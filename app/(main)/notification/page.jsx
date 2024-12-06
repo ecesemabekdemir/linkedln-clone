@@ -43,20 +43,6 @@ export default function Notifications() {
             Acunmedya Akademi şirketinde Asistan Eğitmen olarak çalışmaya
             başladığımı paylaşmaktan mutluluk duyuyorum!
           </div>
-          <div className="engagement">26 etkileşim • 8 yorum</div>
-        </div>
-
-        <div className="premium-banner">
-          <div>
-            Emre Çelik ve 2 kişi daha profilinizi görüntüledi. Premium ile
-            listenin tamamını görüntüleyin.
-          </div>
-          <a href="#" class="premium-button">
-            Premium'u 0 TRY karşılığında deneyin
-          </a>
-          <div className="premium-note">
-            1 aylık ücretsiz deneme. Dilediğiniz zaman iptal edebilirsiniz.
-          </div>
         </div>
       </div>
     </>

@@ -64,31 +64,5 @@
   margin-bottom: 16px;
 }
 
-.engagement {
-  font-size: 13px;
-  color: #666;
-}
 
-.premium-banner {
-  background: white;
-  border-radius: 8px;
-  padding: 16px;
-  margin-bottom: 8px;
-}
 
-.premium-button {
-  display: inline-block;
-  padding: 8px 16px;
-  border: 1px solid #0a66c2;
-  color: #0a66c2;
-  border-radius: 16px;
-  text-decoration: none;
-  font-size: 14px;
-  margin-top: 12px;
-}
-
-.premium-note {
-  font-size: 12px;
-  color: #666;
-  margin-top: 8px;
-}
