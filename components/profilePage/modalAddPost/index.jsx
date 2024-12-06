@@ -14,6 +14,7 @@ export default function ModalAddPost({ isModalOpen, closeModal }) {
     }
     getUser();
   }, []);
+  console.log("modaldaki user", user);
 
   return (
     <>
@@ -22,11 +23,11 @@ export default function ModalAddPost({ isModalOpen, closeModal }) {
           <div className="modal-add-post">
             <div className="modal-header">
               <div className="user-info">
-                <div className="user-avatar"></div>
+                <div className="avatar"></div>
                 <div className="user-details">
                   <div className="user-name">
-                    {user?.firstName}
-                    {user?.lastName}
+                    {user?.user_metadata?.firstName}
+                    {user?.user_metadata?.lastName}
                     <svg
                       width="16"
                       height="16"

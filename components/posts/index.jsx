@@ -3,7 +3,7 @@ import "./posts.css";
 import DeletePostBtn from "../delete-post-btn";
 import NewComment from "../newComment";
 
-export default async function Posts({ dataId, content, user_id, id }) {
+export default async function Posts({ dataId, content, user_id, id, post_id }) {
   const supabase = createClient();
   let { data: users, error } = await supabase
     .from("users")
@@ -39,12 +39,11 @@ export default async function Posts({ dataId, content, user_id, id }) {
       </div>
 
       <div className="engagement">
-        <span>👍</span>
-        <span>Kemal Özalp ve 39 diğer kişi</span>
+        <span> ... diğer kişi</span>
       </div>
 
       <div className="action-buttons">
-        <NewComment users={users} PostId={id} />
+        <NewComment post_id={post_id} users={users} PostId={id} />
       </div>
     </div>
   );

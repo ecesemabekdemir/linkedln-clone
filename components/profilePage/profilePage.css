@@ -27,9 +27,23 @@
   height: 120px;
   border-radius: 50%;
   background: #eee;
-  position: absolute;
   bottom: -40px;
   left: 24px;
+  position: absolute;
+
+}
+.edit-profile {
+  position: absolute;
+  bottom: -40px;
+  right: 24px;
+
+
+}
+
+.editleme-action-button {
+  border: none;
+  cursor: pointer;
+  background: none;
 }
 
 .content {
@@ -297,13 +311,7 @@ h1 {
   gap: 12px;
 }
 
-.user-avatar {
-  width: 48px;
-  height: 48px;
-  border: 1px solid gray;
-  border-radius: 50%;
-  object-fit: cover;
-}
+
 
 .user-details {
   display: flex;

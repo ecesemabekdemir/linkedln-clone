@@ -1,6 +1,7 @@
 "use server";
 
 import { createClient } from "@/utils/supabase/server";
+import ProfileAvatar from "../profile-avatar";
 
 export default async function ProfileHeader() {
   const supabase = createClient();
@@ -13,7 +14,10 @@ export default async function ProfileHeader() {
     <>
       <div className="card">
         <div className="background">
-          <div className="profile-img"></div>
+          <ProfileAvatar />
+          <div className="edit-profile">
+            <button className="editleme-action-button">✏️</button>
+          </div>
         </div>
         <div className="content">
           <h1>
