@@ -7,15 +7,13 @@ export default async function PostDetailPage() {
   const supabase = createClient();
 
   const { data, error } = await supabase.from("posts").select("*");
+  let { data: users } = await supabase.from("users").select("*");
+  const { data: postsLike } = await supabase
+    .from("postsLike")
+    .select()
+    .eq("post_id", data.id)
+    .eq("user_id", users.id)
+    .single();
 
-  // const { data: postsLike } = await supabase
-  //   .from("postsLike")
-  //   .select()
-  //   .eq("post_id", data.id)
-  //   .eq("user_id", user.id)
-  //   .single();
-
-  // if (!data) return notFound();
-
-  return <GetPost data={data} />;
+  return <GetPost data={data} post_id={data.id} />;
 }
