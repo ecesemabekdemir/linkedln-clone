@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { createClient } from "@/utils/supabase/client";
 import { SavePost } from "./action";
+import Image from "next/image";
 
 export default function ModalAddPost({ isModalOpen, closeModal }) {
   const [user, setUser] = useState([]);
@@ -23,7 +24,13 @@ export default function ModalAddPost({ isModalOpen, closeModal }) {
           <div className="modal-add-post">
             <div className="modal-header">
               <div className="user-info">
-                <div className="avatar"></div>
+                <div className="avatar">
+                  {user.image ? (
+                    <Image src={x?.image} width={48} height={48} />
+                  ) : (
+                    ""
+                  )}
+                </div>
                 <div className="user-details">
                   <div className="user-name">
                     {user?.user_metadata?.firstName}

@@ -2,7 +2,8 @@ import Header from "@/components/header";
 import ProfilePage from "@/components/profilePage";
 import SaveUser from "@/components/save-users";
 import "./linked.css";
-export default function UserProfile() {
+
+export default async function UserProfile() {
   return (
     <div className="profilepage-container">
       <Header />

@@ -1,30 +1,57 @@
 "use client";
 
 import "./like.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { AddLike } from "./action";
+import { createClient } from "@/utils/supabase/client";
 
-export default function LikeBtn({ post_id, initialLikeCount, userLiked }) {
+export default function LikeBtn({
+  PostId,
+  initialLikeCount,
+  userLiked,
+  setLikePost,
+  likespost,
+}) {
   const [likeCount, setLikeCount] = useState(Number(initialLikeCount) || 0);
-  const [hasLiked, setHasLiked] = useState(userLiked); // kullanıcının begenem durumu
+  const [hasLiked, setHasLiked] = useState(userLiked);
+  const [user, setUser] = useState(null);
 
-  async function handleLike(e) {
-    e.preventDefault();
+  const supabase = createClient();
+  useEffect(() => {
+    async function getUser() {
+      let {
+        data: { user },
+      } = await supabase.auth.getUser();
+      setUser(user);
+    }
+    getUser();
+  }, []);
 
-    try {
-      // Addlike actiondan çağırıp beğenme durumubu kontrol ediyoruz
-      const updatedLikeState = await AddLike(post_id);
+  async function dislike() {
+    console.log(typeof PostId);
+    const { error } = await supabase
+      .from("postsLike")
+      .delete()
+      .eq("user_id", user?.id)
+      .eq("post_id", PostId);
 
-      // burada eğer liked a eşit se beğeni sayısı arttır ve beğendiğini kaydet else durumuda kontrol ediliyor.
-      if (updatedLikeState === "liked") {
-        setLikeCount((prev) => prev + 1);
-        setHasLiked(true);
-      } else if (updatedLikeState === "unliked") {
-        setLikeCount((prev) => prev - 1);
-        setHasLiked(false);
-      }
-    } catch (error) {
-      console.error("Beğeni işlemi sırasında hata:", error.message);
+    if (!error) {
+      setLikeCount((prev) => prev - 1);
+      setHasLiked(false);
+      setLikePost(false);
+    }
+  }
+
+  async function like() {
+    console.log(typeof PostId);
+    const { error } = await supabase
+      .from("postsLike")
+      .insert([{ user_id: user?.id, post_id: PostId }]);
+
+    if (!error) {
+      setLikeCount((prev) => prev + 1);
+      setHasLiked(true);
+      setLikePost(true);
     }
   }
 
@@ -34,7 +61,7 @@ export default function LikeBtn({ post_id, initialLikeCount, userLiked }) {
     <div className="like-btn">
       <button
         className={`NewCommentBtn like-icon ${hasLiked ? "liked" : ""}`}
-        onClick={handleLike}
+        onClick={() => (likespost ? dislike() : like())}
       >
         <span className="NewCommentIcon heart"></span>
         <span>{hasLiked ? "Beğenildi" : "Beğen"}</span>

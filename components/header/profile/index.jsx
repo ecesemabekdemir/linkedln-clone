@@ -37,26 +37,26 @@ export default function Profile({ user }) {
             <div className="dropdown-section">
               <h2 className="dropdown-section-title">Hesap</h2>
               <div>
-                <a href="#" className="dropdown-section-nav">
+                <Link href="/" className="dropdown-section-nav">
                   Ayarlar ve Gizlilik
-                </a>
-                <a href="#" className="dropdown-section-nav">
+                </Link>
+                <Link href="/" className="dropdown-section-nav">
                   Yardım
-                </a>
-                <a href="#" className="dropdown-section-nav">
+                </Link>
+                <Link href="/" className="dropdown-section-nav">
                   Dil
-                </a>
+                </Link>
               </div>
             </div>
             <div className="dropdown-section">
               <h2 className="dropdown-section-title">Yönet</h2>
               <div>
-                <a href="#" className="dropdown-section-nav">
+                <Link href="/" className="dropdown-section-nav">
                   Gönderiler ve Faaliyetler
-                </a>
-                <a href="#" className="dropdown-section-nav">
+                </Link>
+                <Link href="/newAds" className="dropdown-section-nav">
                   İş İlanı Yayınlama Hesabı
-                </a>
+                </Link>
               </div>
             </div>
             <button onClick={() => signOut()} className="logout-btn">

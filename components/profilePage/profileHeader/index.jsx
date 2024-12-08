@@ -2,6 +2,7 @@
 
 import { createClient } from "@/utils/supabase/server";
 import ProfileAvatar from "../profile-avatar";
+import Link from "next/link";
 
 export default async function ProfileHeader() {
   const supabase = createClient();
@@ -25,27 +26,28 @@ export default async function ProfileHeader() {
           </h1>
           <p className="title">{user?.user_metadata?.headline}</p>
           <p className="location">
-            {user?.user_metadata?.location}· <a href="#">İletişim bilgileri</a>
+            {user?.user_metadata?.location}·{" "}
+            <Link href="#">İletişim bilgileri</Link>
           </p>
           <p className="website">
-            <a href="https://ecesemabekdemir.com.tr/" target="blank">
+            <Link href="https://ecesemabekdemir.com.tr/" target="blank">
               https://ecesemabekdemir.com.tr/
-            </a>
+            </Link>
           </p>
           <p className="connections">500+ bağlantı</p>
           <div className="buttons">
-            <a href="#" class="btn btn-primary">
+            <Link href="#" className="btn btn-primary">
               Açık
-            </a>
-            <a href="#" class="btn btn-secondary">
+            </Link>
+            <Link href="#" className="btn btn-secondary">
               Profil bölümü ekle
-            </a>
-            <a href="#" class="btn btn-secondary">
+            </Link>
+            <Link href="#" className="btn btn-secondary">
               Profili geliştir
-            </a>
-            <a href="#" class="btn btn-secondary">
+            </Link>
+            <Link href="#" className="btn btn-secondary">
               Kaynaklar
-            </a>
+            </Link>
           </div>
         </div>
       </div>

@@ -11,7 +11,6 @@ export default function SearchIcon() {
         width="16"
         height="16"
         className="_1v88awfd cnuthtag _139m7k186"
-        aria-label=""
       >
         <path d="M14.56 12.44 11.3 9.18a5.51 5.51 0 1 0-2.12 2.12l3.26 3.26a1.5 1.5 0 1 0 2.12-2.12M3 6.5A3.5 3.5 0 1 1 6.5 10 3.5 3.5 0 0 1 3 6.5"></path>
       </svg>

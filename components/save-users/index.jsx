@@ -1,5 +1,6 @@
 import { createClient } from "@/utils/supabase/server";
 import "./save-users.css";
+import Image from "next/image";
 
 export default async function SaveUser() {
   const supabase = createClient();
@@ -28,7 +29,9 @@ export default async function SaveUser() {
       {user?.slice(0, 3).map((x, i) => (
         <div key={i} className="save-users-profile-card">
           <div className="save-users-profile-info">
-            <div className="avatar"></div>
+            <div className="avatar">
+              {x.image ? <Image src={x?.image} width={48} height={48} /> : ""}
+            </div>
             <div>
               <span className="save-users-profile-name">
                 {x.firstName} {x.lastName}

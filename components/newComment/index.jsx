@@ -8,9 +8,11 @@ import { createClient } from "@/utils/supabase/client";
 import DeleteCommentBtn from "../commentDeleteBtn";
 import LikeBtn from "../likeBtn";
 
-export default function NewComment({ PostId, users, post_id }) {
+export default function NewComment({ PostId, setLikePost, likespost }) {
   const [comment, setComment] = useState([]);
   const [isCommentOpen, setIsCommentOpen] = useState(false);
+  const [selectedindex, setSelectedIndex] = useState(null);
+  const [submit, setSubmit] = useState(false);
   const [show, setShow] = useState(false);
   const [state, action] = useFormState(SaveComment, {
     message: null,
@@ -43,14 +45,26 @@ export default function NewComment({ PostId, users, post_id }) {
       }
     }
     getComments();
-  }, [PostId]);
+  }, [PostId, submit]);
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+
+    await action(new FormData(e.target));
+
+    setSubmit(!submit);
+  }
 
   return (
     <>
       <div className="comments-container">
         <div className="comment-section">
           <div className="interaction-buttons">
-            <LikeBtn post_id={post_id} />
+            <LikeBtn
+              PostId={PostId}
+              setLikePost={setLikePost}
+              likespost={likespost}
+            />
             <button
               className="NewCommentBtn"
               onClick={() => setIsCommentOpen(!isCommentOpen)}
@@ -71,7 +85,7 @@ export default function NewComment({ PostId, users, post_id }) {
           {isCommentOpen && (
             <>
               <form
-                action={action}
+                onSubmit={handleSubmit}
                 ref={formRef}
                 className={`comment-input ${isCommentOpen ? "open" : ""}`}
               >
@@ -92,7 +106,11 @@ export default function NewComment({ PostId, users, post_id }) {
                     </button>
                   </div>
                 </div>
-                <button className="commentSend" type="Submit">
+                <button
+                  className="commentSend"
+                  type="Submit"
+                  onClick={() => setSubmit(!submit)}
+                >
                   Gönder
                 </button>
               </form>
@@ -102,7 +120,7 @@ export default function NewComment({ PostId, users, post_id }) {
                     <div className="get-comments-header">
                       <div className="avatar"> </div>
                       <div className="comment-info">
-                        <a href="#" class="author-name">
+                        <a href="#" className="author-name">
                           {x?.firstName} {x?.lastName}
                         </a>
                         <div className="post-meta">
@@ -111,7 +129,10 @@ export default function NewComment({ PostId, users, post_id }) {
                       </div>
                       <div className="more-option-dropdown">
                         <button
-                          onClick={() => setShow(!show)}
+                          onClick={() => {
+                            setShow(!show);
+                            setSelectedIndex(x.id);
+                          }}
                           className="dropdown-trigger"
                         >
                           <div className="dots">
@@ -120,7 +141,7 @@ export default function NewComment({ PostId, users, post_id }) {
                             <span></span>
                           </div>
                         </button>
-                        {show && (
+                        {show && selectedindex === x.id && (
                           <div className="dropdown-content">
                             {/* <a href="#" className="dropdown-item">
                             Yorum yapmak için linki kopyala

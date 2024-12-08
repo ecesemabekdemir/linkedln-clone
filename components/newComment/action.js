@@ -20,7 +20,7 @@ export async function SaveComment(prev, formData) {
     .insert([
       {
         content,
-        user_id: user.id,
+        user_id: user?.id,
         post_id: postId,
         firstName: user?.user_metadata.firstName,
         lastName: user?.user_metadata.lastName,

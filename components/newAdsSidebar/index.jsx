@@ -47,11 +47,11 @@ export default async function NewAdsSidebar() {
             <span>›</span>
           </div>
 
-          <div class="game-item">
-            <div class="game-icon"></div>
-            <div class="game-info">
-              <div class="game-title">Queens</div>
-              <div class="game-description">Her bölgeyi taçlandırın</div>
+          <div className="game-item">
+            <div className="game-icon"></div>
+            <div className="game-info">
+              <div className="game-title">Queens</div>
+              <div className="game-description">Her bölgeyi taçlandırın</div>
             </div>
             <span>›</span>
           </div>

@@ -36,12 +36,12 @@ export default function Login() {
               />
             </div>
           </div>
-          <a href="#" className="login-forgot-password">
+          <Link href="/" className="login-forgot-password">
             Şifrenizi mi unuttunuz?
-          </a>
+          </Link>
           <div className="login-checkbox-container">
             <input type="checkbox" id="keep-signed" />
-            <label for="keep-signed">Oturumum açık kalsın</label>
+            <label htmlFor="keep-signed">Oturumum açık kalsın</label>
           </div>
           <button type="submit" className="login-btn btn-primary">
             Oturum aç

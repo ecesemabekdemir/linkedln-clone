@@ -7,7 +7,11 @@ export default function DeleteCommentBtn({ id }) {
   const supabase = createClient();
   const [error, setError] = useState(null);
 
-  const handleDeleteComment = async () => {
+  console.log(id);
+
+  const handleDeleteComment = async (e) => {
+    e.preventDefault();
+
     if (!id) {
       setError("comment ID is required!");
       return;

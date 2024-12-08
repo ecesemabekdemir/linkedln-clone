@@ -1,10 +1,10 @@
 import Posts from "@/components/posts";
 
-export default function GetPost({ data, post_id }) {
+export default async function GetPost({ data }) {
   return (
     <>
       {data?.map((x, i) => (
-        <Posts key={i} {...x} post_id={post_id} />
+        <Posts key={i} {...x} />
       ))}
     </>
   );

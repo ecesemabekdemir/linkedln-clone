@@ -2,8 +2,12 @@ import { createClient } from "@/utils/supabase/server";
 import "./posts.css";
 import DeletePostBtn from "../delete-post-btn";
 import NewComment from "../newComment";
+import Link from "next/link";
+import Engagement from "../engagement";
+import PostFooter from "../postfooter";
+import Image from "next/image";
 
-export default async function Posts({ dataId, content, user_id, id, post_id }) {
+export default async function Posts({ content, user_id, id, post_id }) {
   const supabase = createClient();
   let { data: users, error } = await supabase
     .from("users")
@@ -14,14 +18,24 @@ export default async function Posts({ dataId, content, user_id, id, post_id }) {
     <div className="post-card">
       <div className="post-card-header">
         <div className="user-info">
-          <div className="avatar"></div>
+          <div className="avatar">
+            {users?.map((x, i) =>
+              x.image ? (
+                <Image src={x.image} width={48} height={48} key={i} />
+              ) : (
+                ""
+              )
+            )}
+          </div>
           <div className="user-details">
             <h2>
               {users?.map((x, i) => (
                 <div key={i}>
-                  {x.firstName}
-                  {x.lastName}
-                  <p>{x.headline}</p>
+                  <Link href={`/linkedln`}>
+                    {x.firstName}
+                    {x.lastName}
+                    <p>{x.headline}</p>
+                  </Link>
                 </div>
               ))}
             </h2>
@@ -37,14 +51,7 @@ export default async function Posts({ dataId, content, user_id, id, post_id }) {
           </a>
         </div> */}
       </div>
-
-      <div className="engagement">
-        <span> ... diğer kişi</span>
-      </div>
-
-      <div className="action-buttons">
-        <NewComment post_id={post_id} users={users} PostId={id} />
-      </div>
+      <PostFooter id={id} users={users} />
     </div>
   );
 }

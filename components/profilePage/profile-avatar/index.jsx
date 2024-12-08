@@ -3,11 +3,28 @@ import { useState, useEffect } from "react";
 import "./profile-avatar.css";
 import uploadImage from "./action";
 import Image from "next/image";
+import { createClient } from "@/utils/supabase/client";
 
 export default function ProfileAvatar() {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [avatar, setAvatar] = useState(null);
   const [selectedFile, setSelectedFile] = useState(null);
+  const [imageUrl, setImageUrl] = useState("");
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    async function GetUsers() {
+      const {
+        data: { user },
+      } = await supabase.auth.getUser();
+
+      let { data: users, error } = await supabase
+        .from("users")
+        .select("*")
+        .eq("user_id", user?.id);
+      setUsers(users);
+    }
+    GetUsers();
+  }, [selectedFile]);
 
   function openModal() {
     setIsModalOpen(true);
@@ -17,18 +34,39 @@ export default function ProfileAvatar() {
     setIsModalOpen(false);
   }
 
-  // chatten aldığım kod
+  useEffect(() => {
+    setImageUrl(
+      selectedFile ? URL.createObjectURL(selectedFile) : "/image/empty.jpg"
+    );
+  }, [selectedFile]);
+
+  const supabase = createClient();
+
   async function handleImageUpload(file) {
+    const {
+      data: { user },
+    } = await supabase.auth.getUser();
+
     if (file) {
-      try {
-        const uploadedPath = await uploadImage(file);
-        if (uploadedPath) {
-          const publicUrl = `https://your-supabase-url.supabase.co/storage/v1/object/public/avatars/${uploadedPath}`;
-          setAvatar(publicUrl);
-          console.log("set avatar", setAvatar);
-        }
-      } catch (error) {
-        console.error("Yükleme hatası:", error.message);
+      console.log(file, "filesdasd");
+
+      const { data, error } = await supabase.storage
+        .from("users")
+        .upload(`${Date.now()}-${file.name}`, file);
+      console.log(data, "asdasdadasdasd");
+
+      if (error) {
+        console.error("Dosya yükleme hatası:", error);
+      } else {
+        console.log("Dosya başarıyla yüklendi:", data);
+
+        const { data: usersdata, error } = await supabase
+          .from("users")
+          .update({
+            image: `https://zwofqgqwyersfacwwkgv.supabase.co/storage/v1/object/public/users/${data.path}`,
+          })
+          .eq("user_id", user?.id)
+          .select();
       }
     }
   }
@@ -41,10 +79,17 @@ export default function ProfileAvatar() {
     }
   }, [selectedFile]);
 
+  useEffect(() => {
+    console.log(users);
+  }, [users]);
   return (
     <>
       <button onClick={openModal} className="profile-img">
-        {avatar ? <Image src={avatar} alt="Profil" /> : "Profil Yükle"}
+        {users ? (
+          <Image src={users[0]?.image} alt="Profil" width={50} height={50} />
+        ) : (
+          "Profil Yükle"
+        )}
       </button>
       {isModalOpen && (
         <div className="modal-avatar">
@@ -55,11 +100,16 @@ export default function ProfileAvatar() {
             </button>
           </div>
           <div className="modal-avatar-content">
-            <input
-              className="addAvatar"
-              type="file"
-              onChange={(e) => setSelectedFile(e.target.files[0])}
-            />
+            {selectedFile ? (
+              <Image src={imageUrl} alt="Profil" width={100} height={100} />
+            ) : (
+              <input
+                className="addAvatar"
+                type="file"
+                onChange={(e) => setSelectedFile(e.target.files[0])}
+              />
+            )}
+
             <div className="action-avatar-buttons">
               <button className="action-avatar-button">
                 <i>✎</i>

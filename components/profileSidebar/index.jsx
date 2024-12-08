@@ -1,5 +1,6 @@
 import { createClient } from "@/utils/supabase/server";
 import "./profileSidebar.css";
+import Image from "next/image";
 
 export default async function ProfileSidebar() {
   const supabase = createClient();
@@ -8,11 +9,21 @@ export default async function ProfileSidebar() {
     data: { user },
   } = await supabase.auth.getUser();
 
+  console.log("sidebar user", user);
+
   return (
     <>
       <div className="sidebar-profile-card">
         <div className="sidebar-profile-background">
-          <div className="sidebar-profile-photo"></div>
+          <div className="sidebar-profile-photo">
+            {users?.map((x, i) =>
+              x.image ? (
+                <Image src={x.image} width={48} height={48} key={i} />
+              ) : (
+                ""
+              )
+            )}
+          </div>
         </div>
 
         <div className="sidebar-profile-info">

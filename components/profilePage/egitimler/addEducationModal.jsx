@@ -30,7 +30,7 @@ export default function AddEducation({ isModalOpen, closeModal }) {
             </div>
             <form ref={formRef} action={action} className="education-form">
               <div className="form-group">
-                <label for="school">Okul Adı</label>
+                <label htmlfor="school">Okul Adı</label>
                 <input
                   type="text"
                   id="school"
@@ -40,7 +40,7 @@ export default function AddEducation({ isModalOpen, closeModal }) {
                 />
               </div>
               <div className="form-group">
-                <label for="department">Departman</label>
+                <label htmlfor="department">Departman</label>
                 <input
                   type="text"
                   id="department"
@@ -50,7 +50,7 @@ export default function AddEducation({ isModalOpen, closeModal }) {
                 />
               </div>
               <div className="form-group">
-                <label for="section">Bölüm</label>
+                <label htmlfor="section">Bölüm</label>
                 <input
                   type="text"
                   id="section"
@@ -109,7 +109,7 @@ export default function AddEducation({ isModalOpen, closeModal }) {
                 </div>
               </div>
               <div className="form-group">
-                <label for="activities">Aktiviteler ve Kulüpler</label>
+                <label htmlfor="activities">Aktiviteler ve Kulüpler</label>
                 <textarea
                   id="activities"
                   name="activites"
@@ -117,7 +117,7 @@ export default function AddEducation({ isModalOpen, closeModal }) {
                 ></textarea>
               </div>
               <div className="form-group">
-                <label for="description">Tanım</label>
+                <label htmlfor="description">Tanım</label>
                 <textarea id="description" name="description"></textarea>
               </div>
               <div className="form-group">

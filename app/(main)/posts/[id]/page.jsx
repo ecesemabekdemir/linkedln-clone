@@ -15,5 +15,5 @@ export default async function PostDetailPage() {
     .eq("user_id", users.id)
     .single();
 
-  return <GetPost data={data} post_id={data.id} />;
+  return <GetPost data={data} />;
 }

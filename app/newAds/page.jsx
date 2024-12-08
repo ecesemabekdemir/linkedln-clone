@@ -20,16 +20,16 @@ export default function NewAds() {
       <div className="newads-card">
         <h1>Hemen bir iş ilanı yayınlayın</h1>
         <form ref={formRef} action={action}>
-          <label for="job-title">İş unvanı</label>
+          <label htmlfor="job-title">İş unvanı</label>
           <input
             name="title"
             type="text"
             id="job-title"
             placeholder="İşe alım yaptığınız unvanı ekleyin"
           />
-          <label for="company">Şirket</label>
+          <label htmlFor="company">Şirket</label>
           <input name="company_name" type="text" id="company" />
-          <label for="workplace">İşyeri politikası</label>
+          <label htmlfor="workplace">İşyeri politikası</label>
           <select
             onChange={(e) => e.target.value}
             defaultValue="default"
@@ -43,14 +43,14 @@ export default function NewAds() {
             <option value="hybrid">Hibrit</option>
             <option value="remote">Uzaktan</option>
           </select>
-          <label for="location">İşin konumu</label>
+          <label htmlfor="location">İşin konumu</label>
           <input
             name="location"
             type="text"
             id="location"
             value="Istanbul, Istanbul, Türkiye"
           />
-          <label for="job-type">İş türü</label>
+          <label htmlfor="job-type">İş türü</label>
           <select
             onChange={(e) => e.target.value}
             defaultValue="default"
