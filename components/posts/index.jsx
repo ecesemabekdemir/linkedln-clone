@@ -1,9 +1,7 @@
 import { createClient } from "@/utils/supabase/server";
 import "./posts.css";
 import DeletePostBtn from "../delete-post-btn";
-import NewComment from "../newComment";
 import Link from "next/link";
-import Engagement from "../engagement";
 import PostFooter from "../postfooter";
 import Image from "next/image";
 

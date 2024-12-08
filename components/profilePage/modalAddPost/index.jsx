@@ -15,7 +15,6 @@ export default function ModalAddPost({ isModalOpen, closeModal }) {
     }
     getUser();
   }, []);
-  console.log("modaldaki user", user);
 
   return (
     <>

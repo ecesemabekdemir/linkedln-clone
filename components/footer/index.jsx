@@ -1,3 +1,4 @@
+import Link from "next/link";
 import "./footer.css";
 export default function Footer() {
   return (
@@ -8,16 +9,16 @@ export default function Footer() {
             <h3>Hakkında</h3>
             <ul className="footer-links">
               <li>
-                <a href="#">Profesyonel Topluluk Politikaları</a>
+                <Link href="/">Profesyonel Topluluk Politikaları</Link>
               </li>
               <li>
-                <a href="#">Gizlilik ve Koşullar</a>
+                <Link href="/">Gizlilik ve Koşullar</Link>
               </li>
               <li>
-                <a href="#">Satış Çözümleri</a>
+                <Link href="/">Satış Çözümleri</Link>
               </li>
               <li>
-                <a href="#">Güvenlik Merkezi</a>
+                <Link href="/">Güvenlik Merkezi</Link>
               </li>
             </ul>
           </div>
@@ -25,13 +26,13 @@ export default function Footer() {
             <h3>Erişilebilirlik</h3>
             <ul className="footer-links">
               <li>
-                <a href="#">Kariyer</a>
+                <Link href="/">Kariyer</Link>
               </li>
               <li>
-                <a href="#">Reklam Tercihleri</a>
+                <Link href="/">Reklam Tercihleri</Link>
               </li>
               <li>
-                <a href="#">Mobil</a>
+                <Link href="/">Mobil</Link>
               </li>
             </ul>
           </div>
@@ -40,40 +41,38 @@ export default function Footer() {
             <h3>Yetenek Çözümleri</h3>
             <ul className="footer-links">
               <li>
-                <a href="#">Pazarlama Çözümleri</a>
+                <Link href="/">Pazarlama Çözümleri</Link>
               </li>
               <li>
-                <a href="#">Reklam</a>
+                <Link href="/">Reklam</Link>
               </li>
               <li>
-                <a href="#">Küçük İşletmeler</a>
+                <Link href="/">Küçük İşletmeler</Link>
               </li>
             </ul>
           </div>
 
           <div className="footer-section">
-            <div className="help-section">
-              <ul className="footer-links">
-                <li>
-                  <h3>Sorunuz mu var?</h3>
-                  <a href="#">Yardım Merkezimizi ziyaret edin.</a>
-                </li>
-              </ul>
-            </div>
-
+            <h3>Sorunuz mu var?</h3>
             <ul className="footer-links">
               <li>
-                <h3>Hesabınızı ve gizliliğinizi yönetin</h3>
-                <a href="#">Ayarlarınıza gidin.</a>
+                <Link href="/">Yardım Merkezimizi ziyaret edin.</Link>
               </li>
             </ul>
 
+            <h3>Hesabınızı ve gizliliğinizi yönetin</h3>
             <ul className="footer-links">
               <li>
-                <h3>Öneri şeffaflığı</h3>
-                <a href="#">
+                <Link href="/">Ayarlarınıza gidin.</Link>
+              </li>
+            </ul>
+
+            <h3>Öneri şeffaflığı</h3>
+            <ul className="footer-links">
+              <li>
+                <Link href="/">
                   Önerilen İçerikler hakkında daha fazla bilgi edinin.
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

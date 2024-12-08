@@ -15,16 +15,16 @@ export default async function Ads() {
         <div className="menu-card-nav">
           <ul className="menu-list">
             <li>
-              <a href="#" className="menu-item">
+              <Link href="/" className="menu-item">
                 <i>☰</i>
                 Tercihler
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#" className="menu-item">
+              <Link href="/ads" className="menu-item">
                 <i>🔖</i>
                 İş ilanlarım
-              </a>
+              </Link>
             </li>
             <div className="divider"></div>
             <li>
@@ -46,9 +46,9 @@ export default async function Ads() {
             <DeleteJobsBtn id={job.id} />
             <div className="company-logo"></div>
             <div className="job-content">
-              <a href="#" className="job-title">
+              <Link href="/" className="job-title">
                 {job.title}
-              </a>
+              </Link>
               <div className="company-name">{job.company_name}</div>
               <div className="job-location">{job.location}</div>
               <div className="connections">
@@ -58,9 +58,9 @@ export default async function Ads() {
             </div>
           </div>
         ))}
-        <a href="#" className="job-view-all">
+        <Link href="/ads" className="job-view-all">
           Tümünü gör →
-        </a>
+        </Link>
       </div>
     </div>
   );

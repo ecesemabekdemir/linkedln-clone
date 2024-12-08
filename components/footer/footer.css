@@ -8,14 +8,16 @@
 }
 
 .footer-container {
-  max-width: 1128px;
+  
   margin: 0 auto;
+  padding-inline: 260px;
   display: grid;
   grid-template-columns: repeat(5,1fr);
-  gap: 24px;
+
 }
 
 .footer-section h3 {
+  text-align: center;
   font-size: 16px;
   font-weight: 600;
   margin: 0 0 8px 0;
@@ -29,12 +31,13 @@
 
 .footer-links li {
   margin-bottom: 8px;
+  a {
+    color: rgba(0, 0, 0, 0.6);
+    text-decoration: none;
+  }
 }
 
-.footer-links a {
-  color: rgba(0, 0, 0, 0.6);
-  text-decoration: none;
-}
+
 
 .footer-links a:hover {
   color: #0a66c2;

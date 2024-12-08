@@ -1,7 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
 import "./profile-avatar.css";
-import uploadImage from "./action";
 import Image from "next/image";
 import { createClient } from "@/utils/supabase/client";
 

@@ -38,10 +38,9 @@ export default function NewComment({ PostId, setLikePost, likespost }) {
         .eq("post_id", PostId);
 
       if (data) {
-        console.log("Yorumlar:", data);
         setComment(data);
       } else {
-        console.error("error", error);
+        console.error("get comments error", error);
       }
     }
     getComments();
