@@ -36,16 +36,16 @@ export default async function ProfileHeader() {
           </p>
           <p className="connections">500+ bağlantı</p>
           <div className="buttons">
-            <Link href="#" className="btn btn-primary">
+            <Link href="/" className="btn btn-primary">
               Açık
             </Link>
-            <Link href="#" className="btn btn-secondary">
+            <Link href="/" className="btn btn-secondary">
               Profil bölümü ekle
             </Link>
-            <Link href="#" className="btn btn-secondary">
+            <Link href="/" className="btn btn-secondary">
               Profili geliştir
             </Link>
-            <Link href="#" className="btn btn-secondary">
+            <Link href="/" className="btn btn-secondary">
               Kaynaklar
             </Link>
           </div>

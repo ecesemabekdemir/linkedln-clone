@@ -15,39 +15,33 @@ export default async function Posts({ content, user_id, id, post_id }) {
   return (
     <div className="post-card">
       <div className="post-card-header">
-        <div className="user-info">
-          <div className="avatar">
-            {users?.map((x, i) =>
-              x.image ? (
-                <Image src={x.image} width={48} height={48} key={i} />
-              ) : (
-                ""
-              )
-            )}
-          </div>
-          <div className="user-details">
-            <h2>
-              {users?.map((x, i) => (
-                <div key={i}>
+        {users?.map((x, i) => (
+          <div key={i} className="user-info">
+            <div className="avatar">
+              <Image
+                src={x.image || "/default-avatar.jpg"}
+                width={48}
+                height={48}
+                alt="Picture of the author"
+              />
+            </div>
+            <div className="user-details">
+              <h2>
+                <div>
                   <Link href={`/linkedln`}>
                     {x.firstName}
                     {x.lastName}
                     <p>{x.headline}</p>
                   </Link>
                 </div>
-              ))}
-            </h2>
+              </h2>
+            </div>
           </div>
-        </div>
+        ))}
         <DeletePostBtn id={id} />
       </div>
       <div className="post-content">
         <p>{content}</p>
-        {/* <div className="blog-preview">
-          <a href="#" className="blog-preview-content" target="blank">
-            Entity Framework: .NET 9 ile Data Seeding
-          </a>
-        </div> */}
       </div>
       <PostFooter id={id} users={users} />
     </div>

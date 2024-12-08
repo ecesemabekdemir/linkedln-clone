@@ -2,9 +2,12 @@
   margin: 0 auto;
   background-color: #1c1c1e;
   border-radius: 12px;
-  width: 90%;
-  max-width: 400px;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: 1;
   overflow: hidden;
+  padding-bottom: 25px;
 }
 
 .modal-avatar-header {
@@ -34,9 +37,9 @@
   padding: 20px;
 }
 
-.addAvatar{
-  width: 150px;
-  height: 150px;
+.addAvatar {
+  width: 250px;
+  height: 250px;
   border-radius: 50%;
   border: 1px solid lightgray;
   margin: 0 auto 20px;
@@ -72,3 +75,5 @@
   font-size: 0.8rem;
   color: #ffffff;
 }
+ 
+

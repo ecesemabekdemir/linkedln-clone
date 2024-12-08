@@ -62,6 +62,10 @@
   cursor: pointer;
 }
 
+.avatar img {
+  border-radius: 50%;
+}
+
 @media (max-width: 768px) {
   .news-card {
     display: none;

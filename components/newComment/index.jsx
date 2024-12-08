@@ -7,6 +7,8 @@ import { SaveComment } from "./action";
 import { createClient } from "@/utils/supabase/client";
 import DeleteCommentBtn from "../commentDeleteBtn";
 import LikeBtn from "../likeBtn";
+import Link from "next/link";
+import UserAvatar from "../userAvatar";
 
 export default function NewComment({ PostId, setLikePost, likespost }) {
   const [comment, setComment] = useState([]);
@@ -115,13 +117,13 @@ export default function NewComment({ PostId, setLikePost, likespost }) {
               </form>
               <div className="getCommentsContainer">
                 {comment?.map((x) => (
-                  <div key={x.id}>
+                  <div className="getsComments" key={x.id}>
                     <div className="get-comments-header">
-                      <div className="avatar"> </div>
+                      <UserAvatar />
                       <div className="comment-info">
-                        <a href="#" className="author-name">
+                        <Link href="/" className="author-name">
                           {x?.firstName} {x?.lastName}
-                        </a>
+                        </Link>
                         <div className="post-meta">
                           <span>{x?.headline}</span>
                         </div>
@@ -142,15 +144,12 @@ export default function NewComment({ PostId, setLikePost, likespost }) {
                         </button>
                         {show && selectedindex === x.id && (
                           <div className="dropdown-content">
-                            {/* <a href="#" className="dropdown-item">
-                            Yorum yapmak için linki kopyala
-                          </a> */}
-                            {/* <a href="#" className="dropdown-item">
-                            Bildir
-                          </a> */}
-                            <a href="#" className="dropdown-item">
+                            <Link href="#" className="dropdown-item">
+                              Bildir
+                            </Link>
+                            <Link href="/" className="dropdown-item">
                               <DeleteCommentBtn id={x.id} />
-                            </a>
+                            </Link>
                           </div>
                         )}
                       </div>

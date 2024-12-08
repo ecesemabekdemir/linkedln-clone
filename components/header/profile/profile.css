@@ -7,6 +7,13 @@
   font-size: 14px;
   border: transparent;
   border-radius: 100px;
+  img {
+    border-radius: 50%;
+
+  }
+ span {
+    color: black;
+  }
 }
  
 .dropbtn:hover {
@@ -16,6 +23,10 @@
 .profile-dropdown {
   position: relative;
   display: inline-block;
+  img {
+    width: 25px;
+    height: 25px;
+  }
 }
 
 .profile-dropdown-content {
@@ -46,6 +57,10 @@
   display: flex;
   align-items: center;
   gap: 8px;
+  img {
+    width: 46px;
+    height: 46px;
+  }
 }
 
 .profile-name {

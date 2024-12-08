@@ -8,6 +8,7 @@ export default async function PostDetailPage() {
 
   const { data, error } = await supabase.from("posts").select("*");
   let { data: users } = await supabase.from("users").select("*");
+
   const { data: postsLike } = await supabase
     .from("postsLike")
     .select()

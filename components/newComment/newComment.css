@@ -14,6 +14,7 @@
 .interaction-buttons {
   display: flex;
   justify-content: space-between;
+  gap: 35px;
   padding-bottom: 12px;
   margin-bottom: 12px;
 }
@@ -41,7 +42,6 @@
   background-size: contain;
   background-repeat: no-repeat;
 }
-
 
 
 .comment {
@@ -72,8 +72,6 @@
 }
 
 .avatar img {
-  width: 36px;
-  height: 36px;
   border-radius: 50%;
   object-fit: cover;
 }
@@ -117,14 +115,16 @@
   padding: 16px;
 }
 
+.getsComments {
+  border-bottom: 1px solid #F4F2EE;
+  margin-block: 5px;
+}
 .get-comments-header {
   display: flex;
   align-items: start;
   gap: 8px;
-  margin-bottom: 12px;
+  margin-block: 12px;
 }
-
-
 
 .comment-info {
   flex-grow: 1;

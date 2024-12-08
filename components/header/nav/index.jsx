@@ -5,8 +5,12 @@ import Ads from "@/svgs/ads";
 import MessageIcon from "@/svgs/mesagge";
 import NotificationIcon from "@/svgs/notificationIcon";
 import Link from "next/link";
+import { createClient } from "@/utils/supabase/server";
 
-export default function Nav({ user }) {
+export default async function Nav({ user }) {
+  const supabase = createClient();
+  let { data: users, error } = await supabase.from("users").select("*");
+
   return (
     <>
       <ul className="nav-list">
@@ -35,12 +39,12 @@ export default function Nav({ user }) {
           </Link>
         </li>
         <li className="nav-item">
-          <a href="#" className="nav-link">
+          <Link href="/" className="nav-link">
             <span className="icon">
               <MessageIcon />
             </span>
             <span className="label">Mesajlaşma</span>
-          </a>
+          </Link>
         </li>
         <li className="nav-item">
           <Link href="/notification" className="nav-link">
@@ -52,23 +56,13 @@ export default function Nav({ user }) {
           </Link>
         </li>
         <li className="nav-item">
-          <a href="#" className="nav-link">
-            <span className="icon">
+          <Link href="/" className="nav-link">
+            <span>
               <span className="icon profile"></span>
             </span>
-            <Profile user={user} />
-            <span className="label flex">
-              Ben
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 16 16"
-                fill="currentColor"
-              >
-                <path d="M8 11L3 6h10l-5 5z" />
-              </svg>
-            </span>
-          </a>
+
+            <Profile users={users} user={user} />
+          </Link>
         </li>
       </ul>
     </>

@@ -11,7 +11,7 @@ export default async function Header() {
   const {
     data: { user },
   } = await supabase.auth.getUser();
-  console.log("header user", user);
+
   return (
     <div className="headerContainer">
       <div className="header">

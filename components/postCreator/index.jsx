@@ -2,6 +2,7 @@
 import { useState } from "react";
 import "./postCreator.css";
 import ModalAddPost from "../profilePage/modalAddPost";
+
 export default function PostCreator() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -12,6 +13,7 @@ export default function PostCreator() {
   function closeModal() {
     setIsModalOpen(false);
   }
+
   return (
     <>
       <div className="post-creator">

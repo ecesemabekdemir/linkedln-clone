@@ -30,7 +30,16 @@ export default async function SaveUser() {
         <div key={i} className="save-users-profile-card">
           <div className="save-users-profile-info">
             <div className="avatar">
-              {x.image ? <Image src={x?.image} width={48} height={48} /> : ""}
+              {x.image ? (
+                <Image
+                  src={x?.image}
+                  width={24}
+                  height={24}
+                  alt="Picture of the author"
+                />
+              ) : (
+                ""
+              )}
             </div>
             <div>
               <span className="save-users-profile-name">

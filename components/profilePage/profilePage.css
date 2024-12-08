@@ -21,7 +21,7 @@
   background: linear-gradient(to right, #70b5f9, #a0c7e7);
   position: relative;
 }
-
+ 
 .profile-img {
   width: 120px;
   height: 120px;
@@ -30,6 +30,9 @@
   bottom: -40px;
   left: 24px;
   position: absolute;
+  img {
+    border-radius: 50%;
+  }
 
 }
 .edit-profile {
