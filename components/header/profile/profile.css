@@ -12,7 +12,7 @@
 
   }
  span {
-    color: black;
+  color: #666;
   }
 }
  
@@ -132,6 +132,12 @@
   text-decoration: underline;
 }
 
+
+.flex {
+  width: 100px;
+  display: flex;
+  align-items: center;
+}
 /* -------------------------------------tablet */
 @media (max-width: 768px) {
   .dropbtn {

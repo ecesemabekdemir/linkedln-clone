@@ -202,3 +202,15 @@
 }
 
 /*-----------------------------modal css*/
+
+/* -------------------------------------tablet responsive gelcek */
+@media (width <= 768px) {
+
+}
+
+/* -------------------------------------mobile  responsive glicek*/
+@media (width <= 375px) {
+.post-creator {
+  display: none;
+}
+}

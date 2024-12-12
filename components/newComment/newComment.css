@@ -1,3 +1,8 @@
+.engagement {
+  display: flex;
+  justify-content: space-between;
+}
+
 .comments-container {
   max-width: 800px;
   display: flex;

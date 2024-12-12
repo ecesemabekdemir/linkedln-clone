@@ -3,8 +3,8 @@ import { useState } from "react";
 import "./profile.css";
 import Link from "next/link";
 import { signOut } from "@/action/auth";
-import Image from "next/image";
 import UserAvatar from "@/components/userAvatar";
+import OkIcon from "@/svgs/okIcon";
 
 export default function Profile({ user }) {
   const [show, setShow] = useState(false);
@@ -15,9 +15,7 @@ export default function Profile({ user }) {
         <UserAvatar />
         <span className="label flex">
           Ben
-          <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-            <path d="M8 11L3 6h10l-5 5z" />
-          </svg>
+          <OkIcon />
         </span>
       </button>
       {show && (

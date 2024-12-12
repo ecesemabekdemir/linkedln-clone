@@ -10,7 +10,6 @@ export default function OkIcon() {
         data-token-id="379"
         width="16"
         height="16"
-        className=""
       >
         <path d="M8 11 3 6h10Z"></path>
       </svg>

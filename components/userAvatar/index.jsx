@@ -16,7 +16,6 @@ export default function UserAvatar() {
       } = await supabase.auth.getUser();
 
       if (authError) {
-        console.error("Auth error:", authError);
         return;
       }
 
@@ -28,7 +27,6 @@ export default function UserAvatar() {
           .single();
 
         if (error) {
-          console.error("Error fetching user avatar:", error);
         } else {
           setUserAvatar(data || "/default-avatar.png");
         }
@@ -39,7 +37,7 @@ export default function UserAvatar() {
   }, []);
 
   if (!userAvatar) {
-    return <p>Yükleniyoor...</p>;
+    return <p>Loading...</p>;
   }
   console.log("userAvatars", userAvatar);
 

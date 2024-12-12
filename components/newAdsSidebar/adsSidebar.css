@@ -89,3 +89,17 @@
   cursor: pointer;
   padding: 4px 0;
 }
+
+/* -------------------------------------tablet responsive gelcek */
+@media (width <= 768px) {
+  .save-ads-container {
+display: none;
+  }
+}
+
+
+
+/* -------------------------------------mobile  responsive glicek*/
+@media (width <= 375px) {
+
+}
