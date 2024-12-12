@@ -2,11 +2,12 @@
 
 import { createClient } from "@/utils/supabase/server";
 import "./network.css";
+import Link from "next/link";
 
 export default async function Network() {
   const supabase = createClient();
 
-  let { data: users, error } = await supabase.from("users").select("*");
+  let { data: users } = await supabase.from("users").select("*");
   const shuffle = (array) => {
     for (let i = array.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -24,9 +25,9 @@ export default async function Network() {
           <h1>
             Yazılım Geliştirme sektöründeki kişiler, bu kişileri de takip ediyor
           </h1>
-          <a href="#" className="view-all">
+          <Link href="/network" className="view-all">
             Tümünü gör
-          </a>
+          </Link>
         </div>
 
         <div className="network-grid">

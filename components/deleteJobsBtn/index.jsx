@@ -17,10 +17,8 @@ export default function DeleteJobsBtn({ id }) {
 
     if (error) {
       setError(error.message);
-      // console.error("error", error.message);
     } else {
       setError(null);
-      console.log("silindi jobs");
     }
   };
 

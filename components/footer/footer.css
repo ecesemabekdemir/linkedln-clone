@@ -73,7 +73,7 @@
   font-size: 12px;
 }
 
-@media (max-width: 768px) {
+@media (width < 768px) {
   .footer-container {
       grid-template-columns: repeat(2, 1fr);
   }

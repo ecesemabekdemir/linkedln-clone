@@ -91,6 +91,6 @@ export async function signOut() {
   console.log("buraya geldi");
   const supabase = createClient();
   const { error } = await supabase.auth.signOut();
-  revalidatePath("/", "layout");
+  revalidatePath("/login", "layout");
   redirect("/login");
 }
