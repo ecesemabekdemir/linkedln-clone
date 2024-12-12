@@ -7,7 +7,6 @@ import NewAdsSidebar from "@/components/newAdsSidebar";
 export default async function Home() {
   return (
     <>
-      <Header />
       <div className="container">
         <ProfileSidebar />
         <div className="content-container">
