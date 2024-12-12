@@ -1,5 +1,4 @@
 .post-card {
-  max-width: 800px;
   margin: 0 auto;
   background-color: #ffffff;
   border-radius: 8px;
@@ -22,8 +21,6 @@
 .avatar {
   border-radius: 50%;
   object-fit: cover;
-
- 
 }
 
 .user-details h2 {
@@ -101,17 +98,18 @@
 }
 
 /* -------------------------------------tablet */
-@media (width < 768px)  {
-  .post-card {
-    margin: 0 auto;
-  }
+@media (width <= 768px) {
   .action-button span {
     display: none;
   }
 }
 
 /* -------------------------------------mobile */
-@media (width< 375px) {
+@media (width <= 375px) {
+  .post-card {
+    margin: 0 auto;
+    width: 374px;
+  }
   .action-button span {
     display: none;
   }

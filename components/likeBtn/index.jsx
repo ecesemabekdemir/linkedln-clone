@@ -63,7 +63,7 @@ export default function LikeBtn({
         className={`NewCommentBtn like-icon ${hasLiked ? "liked" : ""}`}
         onClick={() => (likespost ? dislike() : like())}
       >
-        <span className="NewCommentIcon heart"></span>
+        <p className="NewCommentIcon heart"></p>
         <span>{hasLiked ? "Beğenildi" : "Beğen"}</span>
       </button>
     </div>

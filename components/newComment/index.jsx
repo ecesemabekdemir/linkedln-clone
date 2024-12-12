@@ -70,15 +70,15 @@ export default function NewComment({ PostId, setLikePost, likespost }) {
               className="NewCommentBtn"
               onClick={() => setIsCommentOpen(!isCommentOpen)}
             >
-              <span className="NewCommentIcon comment"></span>
+              <p className="NewCommentIcon comment"></p>
               <span>Yorum Yap</span>
             </button>
             <button className="NewCommentBtn">
-              <span className="NewCommentIcon share"></span>
+              <p className="NewCommentIcon share"></p>
               <span>Paylaş</span>
             </button>
             <button className="NewCommentBtn">
-              <span className="NewCommentIcon send"></span>
+              <p className="NewCommentIcon send"></p>
               <span>Gönder</span>
             </button>
           </div>

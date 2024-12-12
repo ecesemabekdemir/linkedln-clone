@@ -17,7 +17,7 @@ export default async function MobileHeader({ user }) {
         </Link>
       </div>
       <div className="search-mobile">
-        {/* <svg
+        <svg
           className="search-icon-mobile"
           viewBox="0 0 24 24"
           fill="none"
@@ -25,10 +25,12 @@ export default async function MobileHeader({ user }) {
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
+          width={15}
+          height={15}
         >
           <circle cx="11" cy="11" r="8"></circle>
           <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-        </svg> */}
+        </svg>
         <input
           type="search"
           className="search-input-mobile"

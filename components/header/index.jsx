@@ -11,6 +11,7 @@ import NetworkIcon from "@/svgs/networkIcon";
 import Ads from "@/svgs/ads";
 import MessageIcon from "@/svgs/mesagge";
 import NotificationIcon from "@/svgs/notificationIcon";
+import Profile from "./profile";
 import MobileHeader from "../mobileHeader/mobileHeader";
 
 export default async function Header() {
@@ -102,7 +103,7 @@ export default async function Header() {
         </div>
       </div>
       <div className="mobile-container">
-        <MobileHeader user={user} />
+        <MobileHeader />
         <ul className="bottom-nav">
           <li className="nav-item">
             <Link href="/" className="nav-link">

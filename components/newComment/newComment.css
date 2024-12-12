@@ -220,3 +220,30 @@ cursor: pointer;
   cursor: pointer;
   background: none;
 }
+
+/*-----------------tablet Responsiveeeee*/
+
+@media (width <= 768px) {
+  
+}
+
+/*-----------------Mobilee Responsiveeeee*/
+
+@media (width <= 375px) {
+
+.interaction-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0;
+}  
+
+
+.interaction-buttons span {
+    display: none;
+}
+.NewCommentIcon {
+  width: 20px;
+
+}
+}
