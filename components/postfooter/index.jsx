@@ -9,7 +9,13 @@ export default function PostFooter({ id, users, postsLike }) {
   const [likespost, setLikePost] = useState(false);
   return (
     <>
-      <Engagement postsLike={postsLike} likespost={likespost} id={id} />
+      <Engagement
+        PostId={id}
+        postsLike={postsLike}
+        likespost={likespost}
+        id={id}
+      />
+
       <div className="action-buttons">
         <NewComment
           users={users}

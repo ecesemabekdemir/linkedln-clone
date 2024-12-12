@@ -86,7 +86,7 @@
 }
 
 /* -------------------------------------tablet responsive gelcek */
-@media (width< 768px) {
+@media (width <= 768px) {
   .sidebar-profile-card {
 display: none;
   }
@@ -95,8 +95,6 @@ display: none;
 
 
 /* -------------------------------------mobile  responsive glicek*/
-@media (width< 375px) {
-  .sidebar-profile-card {
-    display: none;
-      }
+@media (width <= 375px) {
+
 }
