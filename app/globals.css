@@ -77,21 +77,22 @@ a {
 
 
 
-@media (width < 768px) {
+@media (width <= 768px) {
   .container {
-    display: flex;
-    align-items: center;
-    gap: 16px;
     padding: 0;
   }
 
   .content-container {
-    margin: 0 auto;
+    width: 768px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+  
   }
 }
 
-@media (width< 375px) {
-  .container {
-    gap: 12px;
+@media (width <= 375px) {
+  .content-container {
+    width: 374px;
   }
 }
