@@ -1,6 +1,7 @@
-import Link from "next/link";
 import { createClient } from "@/utils/supabase/server";
-import Profile from "../header/profile";
+import OpenMenuBtn from "./openMenuBtn";
+import Link from "next/link";
+import MessageIcon from "@/svgs/mesagge";
 
 export default async function MobileHeader({ user }) {
   const supabase = createClient();
@@ -8,14 +9,7 @@ export default async function MobileHeader({ user }) {
 
   return (
     <div className="mobile-header">
-      <div className="profile-avatar">
-        <Link href="/" className="nav-link">
-          <span>
-            <span className="icon profile"></span>
-          </span>
-          <Profile users={users} user={user} />
-        </Link>
-      </div>
+      <OpenMenuBtn user={user} users={users} />
       <div className="search-mobile">
         <svg
           className="search-icon-mobile"
@@ -36,6 +30,13 @@ export default async function MobileHeader({ user }) {
           className="search-input-mobile"
           placeholder="Arama yap"
         />
+      </div>
+      <div className="mesagge">
+        <Link href="/" className="nav-link">
+          <span className="icon">
+            <MessageIcon />
+          </span>
+        </Link>
       </div>
     </div>
   );

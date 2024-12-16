@@ -1,0 +1,113 @@
+.mobile-sidebar-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 250px;
+  background-color: #fefefe;
+  overflow-y: auto;
+  box-shadow: 0px 8px 16px 0px rgb(0 0 0 / 5%);
+  transition: transform 0.3s ease-in-out;
+  z-index: 1;
+
+}
+
+.mobile-sidebar-container .close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  
+}
+
+.ms-profile-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+
+.ms-name {
+  margin: 10px 0;
+  font-size: 20px;
+}
+
+.ms-stats {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  gap: 16px;
+  margin: 24px 0;
+  padding: 10px 20px;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+
+.ms-stat-item {
+  display: flex;
+  gap: 8px;
+}
+
+.ms-location {
+  margin-bottom: 18px;
+}
+
+.ms-stat-number {
+  color: #0066cc;
+  font-weight: bold;
+}
+
+.ms-section-title {
+  font-size: 14px;
+  padding: 10px 20px;
+  border-bottom: 1px solid #eee;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.ms-games-section {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+}
+
+.ms-settings {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #666;
+  padding: 10px 20px;
+  margin-top: 24px;
+  margin-bottom: 25px;
+}
+
+.ms-settings::before {
+  content: "⚙️";
+}
+
+.ms-button {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px;
+  border: 1px dashed #ccc;
+  border-radius: 8px;
+  background: none;
+  font-size: 16px;
+  color: #666;
+  cursor: pointer;
+}
+
+/*-----open menu btn */
+
+.open-menu-btn {
+  border: none;
+  background: none;
+  cursor: pointer;
+ 
+}
