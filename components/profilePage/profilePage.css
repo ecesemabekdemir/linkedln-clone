@@ -21,7 +21,7 @@
   background: linear-gradient(to right, #70b5f9, #a0c7e7);
   position: relative;
 }
- 
+
 .profile-img {
   width: 120px;
   height: 120px;
@@ -33,14 +33,11 @@
   img {
     border-radius: 50%;
   }
-
 }
 .edit-profile {
   position: absolute;
   bottom: -40px;
   right: 24px;
-
-
 }
 
 .editleme-action-button {
@@ -73,6 +70,8 @@ h1 {
 }
 
 .buttons {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
   margin-top: 16px;
 }
 
@@ -125,7 +124,7 @@ h1 {
 
 .metrics {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
   margin-bottom: 24px;
 }
@@ -272,11 +271,7 @@ h1 {
   padding: 12px;
   color: rgba(0, 0, 0, 0.6);
   text-decoration: none;
- 
-
 }
-
-
 
 /*--------------------------modal post gönderme */
 .modal-overlay {
@@ -314,8 +309,6 @@ h1 {
   gap: 12px;
 }
 
-
-
 .user-details {
   display: flex;
   flex-direction: column;
@@ -349,8 +342,6 @@ h1 {
 .modal-body {
   padding: 20px;
 }
-
-
 
 .modal-content {
   min-height: 120px;
@@ -524,4 +515,76 @@ h1 {
 .education-show-more:hover {
   background: rgba(0, 0, 0, 0.08);
   color: rgba(0, 0, 0, 0.9);
+}
+
+/* -------------------------------------tablet responsive gelcek */
+@media (width <= 768px) {
+  .profile-container {
+    max-width: 768px;
+  }
+
+  .analytics-header {
+    margin-bottom: 14px;
+  }
+
+  .analytics-header h2 {
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .private-badge {
+    font-size: 12px;
+  }
+
+  .metrics {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 10px;
+    margin-bottom: 14px;
+  }
+
+  .metric {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .metric-value {
+    font-size: 16px;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.9);
+  }
+
+  .metric-description {
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.6);
+    line-height: 1.4;
+  }
+  .tabs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .buttons {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+
+  }
+  
+  .btn {
+   padding: 3px;
+   margin-bottom: 8px;
+   text-align: center;
+  }
+  
+
+
+}
+
+/* -------------------------------------mobile  responsive gelicek*/
+@media (width <= 375px) {
+  .profile-container {
+    max-width: 375px;
+    padding: 0;
+  }
 }

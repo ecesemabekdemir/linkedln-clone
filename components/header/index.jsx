@@ -103,6 +103,7 @@ export default async function Header() {
         </div>
       </div>
       <div className="mobile-container">
+        <p className="premium-link">LinkedIn CLONE PROJE</p>
         <MobileHeader />
         <ul className="bottom-nav">
           <li className="nav-item">

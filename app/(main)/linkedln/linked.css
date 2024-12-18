@@ -6,3 +6,21 @@
   margin: 0 auto;
   padding: 0 16px;
 }
+
+
+/* -------------------------------------tablet responsive gelcek */
+@media (width <= 768px) {
+  .profilepage-content {
+    max-width: 768px;
+
+  }
+}
+
+/* -------------------------------------mobile  responsive gelicek*/
+@media (width <= 375px) {
+  .profilepage-content {
+    max-width: 375px;
+    margin: 0 auto;
+    padding: 5px;
+  }
+}

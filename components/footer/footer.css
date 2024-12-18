@@ -17,7 +17,7 @@
 }
 
 .footer-section h3 {
-  text-align: center;
+  text-align: left;
   font-size: 16px;
   font-weight: 600;
   margin: 0 0 8px 0;
@@ -73,8 +73,18 @@
   font-size: 12px;
 }
 
-@media (width < 768px) {
+
+
+/* -------------------------------------tablet responsive gelcek */
+@media (width <= 768px) {
   .footer-container {
-      grid-template-columns: repeat(2, 1fr);
-  }
+    grid-template-columns: repeat(2, 1fr);
+}
+}
+
+/* -------------------------------------mobile  responsive gelicek*/
+@media (width <= 375px) {
+  .footer {
+    display: none;
+ }
 }
