@@ -29,7 +29,7 @@ export default function Notifications() {
         </div>
 
         <div className="feed-item">
-          <div claclassNamess="feed-header">
+          <div className="feed-header">
             <div className="user-info">
               <div className="avatar"></div>
               <div>

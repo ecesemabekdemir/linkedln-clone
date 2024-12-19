@@ -40,7 +40,7 @@ export default async function Activities({ isModalOpen }) {
         <div className="posts">
           {(!posts || posts.length === 0) && <p>Henüz bir gönderiniz yok.</p>}
           {posts?.map((post, i) => (
-            <div className="post">
+            <div key={i} className="post">
               <div className="post-header">
                 <div key={i}>
                   <span>
