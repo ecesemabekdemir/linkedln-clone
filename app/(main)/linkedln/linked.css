@@ -17,7 +17,7 @@
 }
 
 /* -------------------------------------mobile  responsive gelicek*/
-@media (width <= 375px) {
+@media (width <= 475px) {
   .profilepage-content {
     max-width: 375px;
     margin: 0 auto;

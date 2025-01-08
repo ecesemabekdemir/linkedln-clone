@@ -83,7 +83,7 @@
 }
 
 /* -------------------------------------mobile  responsive gelicek*/
-@media (width <= 375px) {
+@media (width <= 475px) {
   .footer {
     display: none;
  }

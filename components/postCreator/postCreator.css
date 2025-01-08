@@ -209,7 +209,7 @@
 }
 
 /* -------------------------------------mobile  responsive glicek*/
-@media (width <= 375px) {
+@media (width <= 475px) {
 .post-creator {
   display: none;
 }

@@ -209,7 +209,7 @@ li {
 }
 
 /* -------------------------------------mobile  responsive glicek*/
-@media (width <= 375px) {
+@media (width <= 475px) {
   .desktop-header-container {
     display: none;
   }

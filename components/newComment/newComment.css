@@ -229,7 +229,7 @@ cursor: pointer;
 
 /*-----------------Mobilee Responsiveeeee*/
 
-@media (width <= 375px) {
+@media (width <= 475px) {
 
 .interaction-buttons {
   display: flex;

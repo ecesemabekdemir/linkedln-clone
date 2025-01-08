@@ -105,7 +105,7 @@
 }
 
 /* -------------------------------------mobile */
-@media (width <= 375px) {
+@media (width <= 475px) {
   .post-card {
     margin: 0 auto;
     width: 374px;
