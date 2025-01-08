@@ -8,7 +8,6 @@ import { createClient } from "@/utils/supabase/client";
 import DeleteCommentBtn from "../commentDeleteBtn";
 import LikeBtn from "../likeBtn";
 import Link from "next/link";
-import UserAvatar from "../userAvatar";
 
 export default function NewComment({ PostId, setLikePost, likespost }) {
   const [comment, setComment] = useState([]);
@@ -119,7 +118,21 @@ export default function NewComment({ PostId, setLikePost, likespost }) {
                 {comment?.map((x) => (
                   <div className="getsComments" key={x.id}>
                     <div className="get-comments-header">
-                      <UserAvatar />
+                      {x.user_image ? (
+                        <Image
+                          src={x.user_image}
+                          width={50}
+                          height={50}
+                          alt={x.user_image}
+                        />
+                      ) : (
+                        <Image
+                          src={"/image/userphoto.png"}
+                          width={50}
+                          height={50}
+                          alt={x.user_image}
+                        />
+                      )}
                       <div className="comment-info">
                         <Link href="/" className="author-name">
                           {x?.firstName} {x?.lastName}
