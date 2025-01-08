@@ -50,7 +50,7 @@ export default function Login() {
         </form>
       </div>
       <div className="signup-link">
-        LinkedIn'de yeni misiniz?
+        LinkedIn de yeni misiniz?
         <Link href="/signup">Hemen katılın </Link>
       </div>
     </div>
