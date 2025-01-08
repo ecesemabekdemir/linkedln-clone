@@ -76,7 +76,7 @@ export default function Signup() {
         {step === 2 && (
           <div className="signup-step2">
             <div className="signup-logo">Logo Gelecek</div>
-            <h1>LinkedIn'e Katılın</h1>
+            <h1>LinkedIn e Katılın</h1>
             <input
               className="nameForm"
               type="text"

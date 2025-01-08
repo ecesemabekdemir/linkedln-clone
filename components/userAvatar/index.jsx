@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 
 export default function UserAvatar() {
-  const [userAvatar, setUserAvatar] = useState([]);
+  const [userAvatar, setUserAvatar] = useState("/default-avatar.png");
   const supabase = createClient();
 
   useEffect(() => {
@@ -15,21 +15,16 @@ export default function UserAvatar() {
         error: authError,
       } = await supabase.auth.getUser();
 
-      if (authError) {
-        return;
-      }
+      if (authError || !user) return;
 
-      if (user) {
-        const { data, error } = await supabase
-          .from("users")
-          .select("*")
-          .eq("user_id", user.id)
-          .single();
+      const { data, error } = await supabase
+        .from("users")
+        .select("*")
+        .eq("user_id", user.id)
+        .single();
 
-        if (error) {
-        } else {
-          setUserAvatar(data || "/default-avatar.png");
-        }
+      if (!error && data && data.image) {
+        setUserAvatar(data.image);
       }
     }
 
@@ -39,12 +34,11 @@ export default function UserAvatar() {
   if (!userAvatar) {
     return <p>Loading...</p>;
   }
-  console.log("userAvatars", userAvatar);
 
   return (
     <div className="avatar">
       <Image
-        src={userAvatar?.image}
+        src={userAvatar}
         width={48}
         height={48}
         alt="User avatar"

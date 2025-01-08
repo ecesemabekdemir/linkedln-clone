@@ -56,13 +56,13 @@ export default async function Nav({ user }) {
           </Link>
         </li>
         <li className="nav-item">
-          <Link href="/" className="nav-link">
+          <span className="nav-link">
             <span>
               <span className="icon profile"></span>
             </span>
 
             <Profile users={users} user={user} />
-          </Link>
+          </span>
         </li>
       </ul>
     </>

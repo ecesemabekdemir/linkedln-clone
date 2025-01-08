@@ -30,7 +30,7 @@ export default function AddEducation({ isModalOpen, closeModal }) {
             </div>
             <form ref={formRef} action={action} className="education-form">
               <div className="form-group">
-                <label htmlfor="school">Okul Adı</label>
+                <label htmlFor="school">Okul Adı</label>
                 <input
                   type="text"
                   id="school"
@@ -40,7 +40,7 @@ export default function AddEducation({ isModalOpen, closeModal }) {
                 />
               </div>
               <div className="form-group">
-                <label htmlfor="department">Departman</label>
+                <label htmlFor="department">Departman</label>
                 <input
                   type="text"
                   id="department"
@@ -50,7 +50,7 @@ export default function AddEducation({ isModalOpen, closeModal }) {
                 />
               </div>
               <div className="form-group">
-                <label htmlfor="section">Bölüm</label>
+                <label htmlFor="section">Bölüm</label>
                 <input
                   type="text"
                   id="section"
@@ -109,7 +109,7 @@ export default function AddEducation({ isModalOpen, closeModal }) {
                 </div>
               </div>
               <div className="form-group">
-                <label htmlfor="activities">Aktiviteler ve Kulüpler</label>
+                <label htmlFor="activities">Aktiviteler ve Kulüpler</label>
                 <textarea
                   id="activities"
                   name="activites"
@@ -117,7 +117,7 @@ export default function AddEducation({ isModalOpen, closeModal }) {
                 ></textarea>
               </div>
               <div className="form-group">
-                <label htmlfor="description">Tanım</label>
+                <label htmlFor="description">Tanım</label>
                 <textarea id="description" name="description"></textarea>
               </div>
               <div className="form-group">

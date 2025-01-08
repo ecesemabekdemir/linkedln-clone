@@ -79,7 +79,7 @@ export default function Footer() {
 
           <div className="footer-section">
             <div className="language-selector">
-              <label htmlfor="language">Dil Seç</label>
+              <label htmlFor="language">Dil Seç</label>
               <select id="language">
                 <option value="tr">Türkçe</option>
                 <option value="en">İngilizce</option>

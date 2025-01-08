@@ -17,7 +17,7 @@ export default function Engagement({ id, likespost, PostId }) {
       setLikeCount(postsLike.length);
     }
     GetLike();
-  }, [likespost]);
+  }, [likespost, supabase]);
 
   // commentleri getir
 
@@ -34,7 +34,7 @@ export default function Engagement({ id, likespost, PostId }) {
       }
     }
     getComments();
-  }, [comment]);
+  }, [comment, supabase]);
 
   return (
     <>
