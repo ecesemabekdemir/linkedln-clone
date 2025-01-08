@@ -223,7 +223,7 @@ li {
 
   .mobile-container {
     display: block;
-  
+  max-width: 475px;
   }
 
   .mobile-header {
@@ -236,7 +236,7 @@ li {
   }
 
   .bottom-nav {
-    width: 374px;
+    width: 474px;
     position: fixed;
     bottom: 0;
     left: 0;
