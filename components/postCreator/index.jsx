@@ -19,10 +19,13 @@ export default function PostCreator() {
       <div className="post-creator">
         <div className="post-input">
           <div className="avatar"></div>
-          <button onClick={openModal} className="btn-field">
+          <button onClick={() => setIsModalOpen(true)} className="btn-field">
             Gönderi başlatın
           </button>
-          <ModalAddPost closeModal={closeModal} isModalOpen={isModalOpen} />
+          <ModalAddPost
+            isModalOpen={isModalOpen}
+            closeModal={() => setIsModalOpen(false)}
+          />
         </div>
         <div className="action-buttons">
           <button className="action-button">

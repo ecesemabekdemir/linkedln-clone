@@ -584,7 +584,7 @@ h1 {
 /* -------------------------------------mobile  responsive gelicek*/
 @media (width <= 475px) {
   .profile-container {
-    max-width: 375px;
+    max-width: 475px;
     padding: 0;
   }
 }

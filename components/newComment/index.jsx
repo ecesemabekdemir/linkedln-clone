@@ -8,6 +8,7 @@ import { createClient } from "@/utils/supabase/client";
 import DeleteCommentBtn from "../commentDeleteBtn";
 import LikeBtn from "../likeBtn";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function NewComment({ PostId, setLikePost, likespost }) {
   const [comment, setComment] = useState([]);
