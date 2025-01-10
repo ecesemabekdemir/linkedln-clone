@@ -67,12 +67,12 @@
 }
 
 @media (max-width: 768px) {
-  .news-card {
+  .save-users-container {
     display: none;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 475px) {
   .news-card {
     display: none;
   }
