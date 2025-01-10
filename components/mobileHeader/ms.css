@@ -91,6 +91,22 @@
   content: "⚙️";
 }
 
+.ms-out {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #666;
+  padding: 10px 20px;
+  margin-top: 24px;
+  margin-bottom: 25px;
+  border: none;
+  background: none;
+}
+
+/* .ms-out::before {
+  content: "↩️";
+} */
+
 .ms-button {
   display: inline-flex;
   align-items: center;

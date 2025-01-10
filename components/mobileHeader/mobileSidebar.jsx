@@ -4,6 +4,7 @@ import "./ms.css";
 import { createClient } from "@/utils/supabase/client";
 import UserAvatar from "../userAvatar";
 import Link from "next/link";
+import { signOut } from "@/action/auth";
 
 export default function MobileSidebar({ isOpenMenu, closeMenu }) {
   const [user, setUser] = useState([]);
@@ -56,6 +57,11 @@ export default function MobileSidebar({ isOpenMenu, closeMenu }) {
           </div>
 
           <div className="ms-settings">Ayarlar</div>
+          <div>
+            <button onClick={() => signOut()} className="ms-out">
+              Oturumu Kapat
+            </button>
+          </div>
         </div>
       )}
     </>

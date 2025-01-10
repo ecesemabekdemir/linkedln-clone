@@ -192,3 +192,20 @@
 .job-view-all:hover {
   background-color: rgba(0, 0, 0, 0.08);
 }
+
+@media (max-width: 768px) {
+  .ads-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    margin: 0 auto;
+  }
+  .menu-card {
+
+    width: 450px;
+  }
+}
+
+@media (max-width: 475px) {
+
+}
