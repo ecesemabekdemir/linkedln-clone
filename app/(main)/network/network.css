@@ -146,3 +146,23 @@
 .follow-btn:hover {
   background-color: rgba(10, 102, 194, 0.1);
 }
+
+@media (max-width: 768px) {
+  .network-container {
+    margin: 0 auto;
+    border-radius: 0;
+  }
+  .network-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 475px) {
+  .network-grid {
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+
+  }
+}
