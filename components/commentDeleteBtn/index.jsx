@@ -1,19 +1,36 @@
 "use client";
 
 import { createClient } from "@/utils/supabase/client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-export default function DeleteCommentBtn({ id }) {
+export default function DeleteCommentBtn({ id, commentUserId }) {
   const supabase = createClient();
+  const [currentUser, setCurrentUser] = useState(null);
   const [error, setError] = useState(null);
 
-  console.log(id);
+  useEffect(() => {
+    // Oturum açmış kullanıcıyı al
+    async function fetchCurrentUser() {
+      const {
+        data: { user },
+        error: authError,
+      } = await supabase.auth.getUser();
+
+      if (authError) {
+        console.error("Authentication error:", authError.message);
+        return;
+      }
+      setCurrentUser(user);
+    }
+
+    fetchCurrentUser();
+  }, []);
 
   const handleDeleteComment = async (e) => {
     e.preventDefault();
 
     if (!id) {
-      setError("comment ID is required!");
+      setError("Comment ID is required!");
       return;
     }
 
@@ -21,10 +38,9 @@ export default function DeleteCommentBtn({ id }) {
 
     if (error) {
       setError(error.message);
-      // console.error("error", error.message);
     } else {
       setError(null);
-      console.log("silindi comment");
+      console.log("Yorum başarıyla silindi.");
     }
   };
 
