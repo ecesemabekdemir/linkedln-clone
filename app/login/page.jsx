@@ -4,9 +4,46 @@ import Link from "next/link";
 import "./login.css";
 import { useFormState } from "react-dom";
 import { login } from "@/action/auth";
+import { useState } from "react";
 
 export default function Login() {
   const [state, action] = useFormState(login, { errors: null });
+  const [errors, setErrors] = useState({ email: "", password: "" });
+
+  // Doğrulama fonksiyonu
+  const validate = (formData) => {
+    let isValid = true;
+    const newErrors = { email: "", password: "" };
+
+    if (!formData.get("email")) {
+      newErrors.email = "E-posta adresi gereklidir.";
+      isValid = false;
+    } else if (!/\S+@\S+\.\S+/.test(formData.get("email"))) {
+      newErrors.email = "Geçerli bir e-posta adresi giriniz.";
+      isValid = false;
+    }
+
+    if (!formData.get("password")) {
+      newErrors.password = "Şifre gereklidir.";
+      isValid = false;
+    } else if (formData.get("password").length < 6) {
+      newErrors.password = "Şifre en az 6 karakter olmalıdır.";
+      isValid = false;
+    }
+
+    setErrors(newErrors);
+    return isValid;
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const formData = new FormData(event.target);
+
+    if (validate(formData)) {
+      // Doğruysa giriş işlemini başlat
+      action(formData);
+    }
+  };
 
   return (
     <div className="login-container">
@@ -15,7 +52,7 @@ export default function Login() {
         <p className="login-subtitle">
           Profesyonel dünyanızla ilgili güncel haberlere sahip olun.
         </p>
-        <form action={action}>
+        <form onSubmit={handleSubmit}>
           <div className="login-form-group">
             <input
               className="login-form-control"
@@ -24,6 +61,9 @@ export default function Login() {
               placeholder="E-posta adresini giriniz"
               required
             />
+            {errors.email && (
+              <div className="error-message">{errors.email}</div>
+            )}
           </div>
           <div className="login-form-group">
             <div className="login-password-container">
@@ -35,6 +75,9 @@ export default function Login() {
                 required
               />
             </div>
+            {errors.password && (
+              <div className="error-message">{errors.password}</div>
+            )}
           </div>
           <Link href="/" className="login-forgot-password">
             Şifrenizi mi unuttunuz?

@@ -124,3 +124,13 @@ h1 {
   color: #0a66c2;
   margin: 16px 0;
 }
+
+.error {
+  border-color: red;
+}
+
+.error-message {
+  color: red;
+  font-size: 0.875rem;
+  margin-top: 4px;
+}
