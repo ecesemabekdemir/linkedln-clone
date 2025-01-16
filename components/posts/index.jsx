@@ -19,7 +19,11 @@ export default async function Posts({ content, user_id, id, post_id }) {
           <div key={i} className="user-info">
             <div className="avatar">
               <Image
-                src={x.image || "/default-avatar.jpg"}
+                src={
+                  x.image && x.image.trim() !== ""
+                    ? x.image
+                    : "/image/userphoto.png"
+                }
                 width={48}
                 height={48}
                 alt="Picture of the author"
