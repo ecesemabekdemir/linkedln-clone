@@ -45,7 +45,12 @@ export default async function ProfileSidebar() {
                 className="rounded-full"
               />
             ) : (
-              <p>No profile picture available</p>
+              <Image
+                src="/image/userphoto.png"
+                alt="Profil Yükleniyor"
+                width={80}
+                height={80}
+              />
             )}
           </div>
         </div>

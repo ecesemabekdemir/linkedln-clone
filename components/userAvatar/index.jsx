@@ -5,40 +5,55 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 
 export default function UserAvatar() {
-  const [userAvatar, setUserAvatar] = useState("/default-avatar.png");
+  const DEFAULT_AVATAR = "/image/userphoto.png";
+  const [userAvatar, setUserAvatar] = useState(DEFAULT_AVATAR);
+  const [loading, setLoading] = useState(true);
   const supabase = createClient();
 
   useEffect(() => {
     async function getUserAvatar() {
-      const {
-        data: { user },
-        error: authError,
-      } = await supabase.auth.getUser();
+      try {
+        const {
+          data: { user },
+          error: authError,
+        } = await supabase.auth.getUser();
 
-      if (authError || !user) return;
+        if (authError || !user) {
+          setUserAvatar(DEFAULT_AVATAR);
+          setLoading(false);
+          return;
+        }
 
-      const { data, error } = await supabase
-        .from("users")
-        .select("*")
-        .eq("user_id", user.id)
-        .single();
+        const { data, error } = await supabase
+          .from("users")
+          .select("image")
+          .eq("user_id", user.id)
+          .single();
 
-      if (!error && data && data.image) {
-        setUserAvatar(data.image);
+        if (!error && data?.image) {
+          setUserAvatar(data.image);
+        } else {
+          setUserAvatar(DEFAULT_AVATAR);
+        }
+      } catch (error) {
+        console.error("Kullanıcı avatarı yüklenirken bir hata oluştu:", error);
+        setUserAvatar(DEFAULT_AVATAR);
+      } finally {
+        setLoading(false);
       }
     }
 
     getUserAvatar();
   }, []);
 
-  if (!userAvatar) {
+  if (loading) {
     return <p>Loading...</p>;
   }
 
   return (
     <div className="avatar">
       <Image
-        src={userAvatar}
+        src={userAvatar || DEFAULT_AVATAR}
         width={48}
         height={48}
         alt="User avatar"

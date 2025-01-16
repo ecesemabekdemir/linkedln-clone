@@ -114,10 +114,10 @@ export default function ProfileAvatar() {
           <Image src={users[0].image} alt="Profil" width={120} height={120} />
         ) : (
           <Image
-            src="/image/empty.jpg"
+            src="/image/userphoto.png"
             alt="Profil Yükleniyor"
-            width={150}
-            height={150}
+            width={110}
+            height={110}
           />
         )}
       </button>
