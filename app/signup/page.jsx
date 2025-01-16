@@ -15,27 +15,47 @@ export default function Signup() {
     location: "",
     headline: "",
   });
+  const [errors, setErrors] = useState({});
+  const [loading, setLoading] = useState(false); // Loading state
 
-  // Adım geçişi için
+  const validatePassword = (password) => {
+    const regex =
+      /^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*(),.?":{}|<>])[A-Za-z\d!@#$%^&*(),.?":{}|<>]{6,}$/;
+    return regex.test(password);
+  };
+
   const handleNext = (e) => {
     e.preventDefault();
     setStep((prev) => prev + 1);
   };
 
-  // Son adımda formu gönderme
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const currentErrors = {};
+
+    if (!validatePassword(formData.password)) {
+      currentErrors.password =
+        "Şifreniz en az bir harf, bir rakam ve bir noktalama işareti içermelidir.";
+    }
+
+    if (Object.keys(currentErrors).length > 0) {
+      setErrors(currentErrors);
+      return;
+    }
+
+    setLoading(true); // Başla
     try {
-      await signUp(formData); // Kayıt fonksiyonunu çağır
-      await SaveUsers(formData); // kullanıcıları tutuyor.
-      alert("Kayıt işlemi başarılı!");
+      await signUp(formData);
+      await SaveUsers(formData);
+      setLoading(false); // Durdur
     } catch (err) {
-      alert(`Kayıt işlemi başarısız: ${err.message}`);
+      setLoading(false); // Durdur
+      setErrors({ submit: `Kayıt işlemi başarısız: ${err.message}` });
     }
   };
-
   return (
     <div className="signup-container">
+      {loading && <div className="loading-spinner">...</div>}
       <form onSubmit={step === 3 ? handleSubmit : handleNext}>
         {step === 1 && (
           <div className="signup-step1">
@@ -51,6 +71,7 @@ export default function Signup() {
                 setFormData((prev) => ({ ...prev, email: e.target.value }))
               }
             />
+            {errors.email && <p className="error">{errors.email}</p>}
             <label htmlFor="password">Şifre (6+ karakter)</label>
             <input
               type="password"
@@ -61,6 +82,7 @@ export default function Signup() {
                 setFormData((prev) => ({ ...prev, password: e.target.value }))
               }
             />
+            {errors.password && <p className="error">{errors.password}</p>}
             <div className="terms">
               <h3>Bu bir clone projedir</h3>
             </div>
@@ -75,7 +97,7 @@ export default function Signup() {
         )}
         {step === 2 && (
           <div className="signup-step2">
-            <div className="signup-logo">Logo Gelecek</div>
+            <div className="signup-logo"></div>
             <h1>LinkedIn’e Katılın</h1>
             <input
               className="nameForm"
@@ -124,6 +146,7 @@ export default function Signup() {
                   setFormData((prev) => ({ ...prev, location: e.target.value }))
                 }
               />
+              {errors.location && <p className="error">{errors.location}</p>}
             </div>
             <div className="form-group">
               <label>
@@ -137,6 +160,7 @@ export default function Signup() {
                   setFormData((prev) => ({ ...prev, headline: e.target.value }))
                 }
               />
+              {errors.headline && <p className="error">{errors.headline}</p>}
             </div>
             <button className="continueBtn" type="submit">
               Devam Et

@@ -209,3 +209,16 @@ input {
 .continueBtn:hover {
   background-color: #004182;
 }
+
+.error {
+  color: red;
+  font-size: 0.9em;
+  margin-top: 5px;
+}
+
+.loading-spinner {
+  color: rgb(40, 40, 44);
+  font-size: 16px;
+  text-align: center;
+  margin: 20px 0;
+}
