@@ -30,9 +30,7 @@ export default async function ProfileHeader() {
             <Link href="#">İletişim bilgileri</Link>
           </p>
           <p className="website">
-            <Link href="https://ecesemabekdemir.com.tr/" target="blank">
-              https://ecesemabekdemir.com.tr/
-            </Link>
+            <Link href="/" target="blank"></Link>
           </p>
           <p className="connections">500+ bağlantı</p>
           <div className="buttons">
