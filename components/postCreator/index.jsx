@@ -1,32 +1,10 @@
-"use client";
-import { useState } from "react";
-import "./postCreator.css";
-import ModalAddPost from "../profilePage/modalAddPost";
+import PostAdd from "./postAdd";
 
 export default function PostCreator() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  function openModal() {
-    setIsModalOpen(true);
-  }
-
-  function closeModal() {
-    setIsModalOpen(false);
-  }
-
   return (
     <>
       <div className="post-creator">
-        <div className="post-input">
-          <div className="avatar"></div>
-          <button onClick={() => setIsModalOpen(true)} className="btn-field">
-            Gönderi başlatın
-          </button>
-          <ModalAddPost
-            isModalOpen={isModalOpen}
-            closeModal={() => setIsModalOpen(false)}
-          />
-        </div>
+        <PostAdd />
         <div className="action-buttons">
           <button className="action-button">
             <svg
