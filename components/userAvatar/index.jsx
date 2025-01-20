@@ -46,10 +46,6 @@ export default function UserAvatar() {
     getUserAvatar();
   }, []);
 
-  if (loading) {
-    return <p>Loading...</p>;
-  }
-
   return (
     <div className="avatar">
       <Image
