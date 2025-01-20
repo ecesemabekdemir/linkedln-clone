@@ -236,7 +236,6 @@ li {
   }
 
   .bottom-nav {
-    width: 474px;
     position: fixed;
     bottom: 0;
     left: 0;
@@ -313,5 +312,9 @@ li {
     font-size: 14px;
     border-bottom: 2px solid transparent;
     color: #666;
+  }
+  .nav-link-post {
+    border: none;
+    padding: 0;
   }
 }
