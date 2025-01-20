@@ -208,6 +208,10 @@
 }
 
 @media (max-width: 475px) {
+  .ads-container {
+    margin: 0 auto;
+    padding-top: 10px;
+  }
   .menu-card {
     width: 450px;
   }
