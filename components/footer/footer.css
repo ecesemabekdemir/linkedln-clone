@@ -77,9 +77,9 @@
 
 /* -------------------------------------tablet responsive gelcek */
 @media (width <= 768px) {
-  .footer-container {
-    grid-template-columns: repeat(2, 1fr);
-}
+  .footer {
+    display: none;
+ }
 }
 
 /* -------------------------------------mobile  responsive gelicek*/
