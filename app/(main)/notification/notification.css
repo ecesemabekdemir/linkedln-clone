@@ -61,5 +61,16 @@
   margin-bottom: 16px;
 }
 
+/* -------------------------------------tablet responsive gelcek */
+@media (width <= 768px) {
+}
 
-
+/* -------------------------------------mobile  responsive glicek*/
+@media (width <= 475px) {
+  .notification-container {
+    margin: 0;
+  }
+  .nav-tabs {
+    gap: 0;
+  }
+}
