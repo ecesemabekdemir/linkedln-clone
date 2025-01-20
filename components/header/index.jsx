@@ -13,6 +13,7 @@ import MessageIcon from "@/svgs/mesagge";
 import NotificationIcon from "@/svgs/notificationIcon";
 import Profile from "./profile";
 import MobileHeader from "../mobileHeader/mobileHeader";
+import PostMobileAdd from "../postCreator/postMobileAdd";
 
 export default async function Header() {
   const supabase = createClient();
@@ -125,8 +126,7 @@ export default async function Header() {
 
           <li className="nav-item">
             <Link href="/" className="nav-link">
-              <span className="icon">+</span>
-              <span className="label">Gönder</span>
+              <PostMobileAdd />
             </Link>
           </li>
           <li className="nav-item">
