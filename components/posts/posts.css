@@ -102,13 +102,19 @@
   .action-button span {
     display: none;
   }
+  .post-card {
+    width: 768px;
+    margin: 0 auto;
+    margin-bottom: 8px;
+  }
 }
 
 /* -------------------------------------mobile */
 @media (width <= 475px) {
   .post-card {
+    width: 425px;
     margin: 0 auto;
-    width: 374px;
+    margin-bottom: 5px;
   }
   .action-button span {
     display: none;

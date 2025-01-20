@@ -79,19 +79,21 @@ a {
 @media (width <= 768px) {
   .container {
     padding: 0;
+    gap: 0;
   }
 
   .content-container {
-    width: 768px;
     display: flex;
     flex-wrap: wrap;
-    gap: 24px;
-  
   }
 }
 
 @media (width <= 475px) {
-  .content-container {
-    width: 474px;
+  .container {
+    gap: 0;
   }
+  .content-container {
+    gap:0;
+  }
+
 }
