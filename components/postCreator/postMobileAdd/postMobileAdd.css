@@ -1,0 +1,14 @@
+.post-input-mobile {
+  border: none;
+
+}
+.post-input-mobile button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #65676b;
+}
+
+.btn-field-mobile {
+  align-items: center;
+}
