@@ -199,13 +199,16 @@
     flex-wrap: wrap;
     padding: 10px;
     margin: 0 auto;
+    gap: 10px;
+    padding-top: 70px;
   }
   .menu-card {
-
-    width: 450px;
+    width: 768px;
   }
 }
 
 @media (max-width: 475px) {
-
+  .menu-card {
+    width: 450px;
+  }
 }
