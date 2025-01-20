@@ -1,7 +1,7 @@
 "use client";
 import { useFormState } from "react-dom";
 import "./education.css";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { SaveEducation } from "./action";
 
 export default function AddEducation({ isModalOpen, closeModal }) {
@@ -9,13 +9,21 @@ export default function AddEducation({ isModalOpen, closeModal }) {
     message: null,
     error: null,
   });
-
+  const [skills, setSkills] = useState([]);
   const formRef = useRef();
   useEffect(() => {
     if (state?.message) {
       formRef.current.reset();
     }
   }, [state]);
+  const handleAddSkill = () => {
+    setSkills([...skills, ""]); // Yeni input ekle
+  };
+  const handleSkillChange = (index, event) => {
+    const updatedSkills = [...skills];
+    updatedSkills[index] = event.target.value; // Belirli input'u güncelle
+    setSkills(updatedSkills);
+  };
 
   return (
     <>
@@ -121,9 +129,24 @@ export default function AddEducation({ isModalOpen, closeModal }) {
                 <textarea id="description" name="description"></textarea>
               </div>
               <div className="form-group">
-                <label for="skills">Yetenekler</label>
-                <input type="text" id="skills" name="skills" />
-                <button type="button" className="add-button">
+                <label htmlFor="skills">Yetenekler</label>
+                {skills.map((skill, index) => (
+                  <div key={index} className="skill-input">
+                    <input
+                      type="text"
+                      id={`skills-${index}`}
+                      name={`skills-${index}`}
+                      value={skill}
+                      onChange={(e) => handleSkillChange(index, e)}
+                      placeholder="Yetenek ekle"
+                    />
+                  </div>
+                ))}
+                <button
+                  type="button"
+                  className="add-button"
+                  onClick={handleAddSkill}
+                >
                   + Yetenek Ekle
                 </button>
               </div>

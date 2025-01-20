@@ -48,6 +48,10 @@
 .form-group {
   display: flex;
   flex-direction: column;
+
+  textarea , select, input{
+    border: 1px solid lightgray;
+  }
 }
 
 .form-row {
@@ -121,6 +125,13 @@ textarea {
   font-weight: bold;
 }
 
+.skill-input {
+  margin-bottom: 10px;
+
+  input {
+    border: 1px solid lightgray;
+  }
+}
 
 /*tablet responsive yapılcak*/
 
