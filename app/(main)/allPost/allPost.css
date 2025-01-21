@@ -1,0 +1,74 @@
+.allPostMain {
+  max-width: 1128px;
+  display: flex;
+  align-items: start;
+  gap: 24px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.allPostContainer {
+  width: 500px;
+  margin-top: 100px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.08);
+  margin-bottom: 25px;
+}
+
+.posts {
+  padding: 8px 24px;
+}
+
+.post {
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.post-header {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 14px;
+}
+
+.post-content {
+  margin-bottom: 12px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.post-stats {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.reactions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.nav-tabs-allPost {
+  display: flex;
+  gap: 8px;
+  background: white;
+  padding: 16px 16px 0 16px;
+  border-radius: 8px;
+}
+
+.tab-allPost {
+  padding: 8px 16px;
+  border-radius: 24px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #666;
+}
+
+.tab.active-allPost {
+  background-color: #006241;
+  color: white;
+}

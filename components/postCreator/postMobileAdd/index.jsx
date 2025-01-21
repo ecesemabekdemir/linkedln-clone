@@ -5,6 +5,7 @@ import "./postMobileAdd.css";
 
 export default function PostMobileAdd() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [posts, setPosts] = useState([]);
 
   function openModal() {
     setIsModalOpen(true);
@@ -14,6 +15,9 @@ export default function PostMobileAdd() {
     setIsModalOpen(false);
   }
 
+  const addPost = (newPost) => {
+    setPosts([newPost, ...posts]); // Yeni gönderiyi başta ekle
+  };
   return (
     <>
       <div className="post-input-mobile">
@@ -26,6 +30,7 @@ export default function PostMobileAdd() {
           <span className="label">Gönder</span>
         </button>
         <ModalAddPost
+          addPost={addPost}
           isModalOpen={isModalOpen}
           closeModal={() => setIsModalOpen(false)}
         />

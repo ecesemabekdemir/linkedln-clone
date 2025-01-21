@@ -1,6 +1,7 @@
 "use server";
 import { createClient } from "@/utils/supabase/server";
 import ModalAddButton from "../modalAddBtn";
+import Link from "next/link";
 
 export default async function Activities({ isModalOpen }) {
   const supabase = createClient();
@@ -21,6 +22,8 @@ export default async function Activities({ isModalOpen }) {
     .select("*")
     .eq("user_id", user.id);
 
+  const lastTwoPosts = posts?.slice(-2);
+
   return (
     <>
       <div className="activity-card">
@@ -38,11 +41,13 @@ export default async function Activities({ isModalOpen }) {
           <button className="tab">Belgeler</button>
         </div>
         <div className="posts">
-          {(!posts || posts.length === 0) && <p>Henüz bir gönderiniz yok.</p>}
-          {posts?.map((post, i) => (
+          {(!lastTwoPosts || lastTwoPosts.length === 0) && (
+            <p>Henüz bir gönderiniz yok.</p>
+          )}
+          {lastTwoPosts?.map((post, i) => (
             <div key={i} className="post">
               <div className="post-header">
-                <div key={i}>
+                <div>
                   <span>
                     <span>
                       {user.user_metadata?.firstName}{" "}
@@ -63,9 +68,9 @@ export default async function Activities({ isModalOpen }) {
           ))}
         </div>
 
-        <a href="#" className="show-more">
+        <Link href="/allPost" className="show-more">
           Tüm gönderileri göster →
-        </a>
+        </Link>
       </div>
     </>
   );

@@ -2,10 +2,9 @@
 
 import { useEffect, useState } from "react";
 import { createClient } from "@/utils/supabase/client";
-import Image from "next/image";
 import UserAvatar from "@/components/userAvatar";
 
-export default function ModalAddPost({ isModalOpen, closeModal }) {
+export default function ModalAddPost({ isModalOpen, closeModal, addPost }) {
   const [user, setUser] = useState([]);
   const [content, setContent] = useState("");
   const [loading, setLoading] = useState(false);
@@ -28,12 +27,13 @@ export default function ModalAddPost({ isModalOpen, closeModal }) {
       .from("posts")
       .insert([{ content, user_id: user?.id }]);
 
-    if (!error) {
-      // Modal'ı kapatın ve alanı sıfırlayın
+    if (data && data.length > 0) {
+      // Veri geldi ve boş değilse, yeni gönderiyi ekleyin
+      addPost(data[0]);
       setContent("");
       closeModal();
     } else {
-      console.error("Post gönderilemedi:", error.message);
+      console.error("Beklenmeyen bir hata oluştu: Veriler boş döndü.");
     }
     setLoading(false);
   };
