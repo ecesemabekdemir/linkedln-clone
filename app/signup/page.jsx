@@ -4,6 +4,7 @@ import Link from "next/link";
 import "./signup.css";
 import { useState } from "react";
 import { SaveUsers, signUp } from "@/action/auth";
+import Image from "next/image";
 
 export default function Signup() {
   const [step, setStep] = useState(1);
@@ -59,7 +60,15 @@ export default function Signup() {
       <form onSubmit={step === 3 ? handleSubmit : handleNext}>
         {step === 1 && (
           <div className="signup-step1">
-            <div className="signup-logo">Logo Gelecek</div>
+            <div className="signup-logo">
+              <Image
+                src="https://content.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Logo.svg.original.svg"
+                alt="LinkedIn"
+                className="logo"
+                width={135}
+                height={34}
+              ></Image>
+            </div>
             <h1>Profesyonel hayatınızdan en iyi şekilde yararlanın</h1>
             <label htmlFor="email">E-posta</label>
             <input
