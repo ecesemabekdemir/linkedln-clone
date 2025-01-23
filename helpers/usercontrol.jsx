@@ -16,7 +16,7 @@ export function UserControl() {
         error,
       } = await supabase.auth.getUser();
       if (!user?.id) {
-        router.push("/login");
+        router.push("/linked");
       }
       console.log(user);
     }
