@@ -105,13 +105,13 @@ export default function LinkedPage() {
               </button>
               <button className="btn btn-email">E-posta ile oturum açın</button>
               <p className="terms">
-                Devam Et seçeneğini tıklayarak veya oturum açarak LinkedIn'in
-                <Link href="#">Kullanıcı Anlaşması</Link>'nı,
-                <Link href="#">Gizlilik Politikası</Link>'nı ve
-                <Link href="#">Çerez Politikası</Link>'nı kabul etmiş olursunuz.
+                Devam Et seçeneğini tıklayarak veya oturum açarak LinkedIn in
+                <Link href="#">Kullanıcı Anlaşması</Link>nı,
+                <Link href="#">Gizlilik Politikası</Link>nı ve
+                <Link href="#">Çerez Politikası</Link>nı kabul etmiş olursunuz.
               </p>
               <div className="signup-linked">
-                LinkedIn'de yeni misiniz?{" "}
+                LinkedIn de yeni misiniz?{" "}
                 <Link href="/signup">Hemen katılın</Link>
               </div>
             </div>
