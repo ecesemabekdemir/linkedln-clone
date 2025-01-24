@@ -116,16 +116,8 @@ export default function LinkedPage() {
               </div>
             </div>
           </div>
-
-          <svg
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Ekran%20g%C3%B6r%C3%BCnt%C3%BCs%C3%BC%202025-01-23%20164144-VUYA3hgeh2iCNJRcGY8r6GDpHRbpyD.png"
-            alt="Professional working"
-            width={800}
-            height={600}
-            className="hero-image"
-          />
+          <div className="footerClone">Clone Projedir</div>
         </div>
-        <div className="footerClone">Clone Projedir</div>
       </div>
     </>
   );

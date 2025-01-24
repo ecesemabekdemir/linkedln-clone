@@ -73,7 +73,17 @@ h1 {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  button {
+    cursor: pointer;
+  }
+  button:hover {
+    background: #F5F5F5;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    color: rgba(0, 0, 0, 0.6);
+  }
 }
+
+
 
 .btn {
   padding: 16px 24px;
@@ -85,19 +95,19 @@ h1 {
 }
 
 .btn-google {
-  background: white;
+  background: #FFFFFF;
   border: 1px solid #dadce0;
 }
 
 .btn-microsoft {
-  background: white;
+  background: #FFFFFF;
   border: 1px solid #dadce0;
 }
 
 .btn-email {
-  background: white;
-  border: 1px solid rgba(0, 0, 0, 0.3);
-  color: rgba(0, 0, 0, 0.6);
+  background: #FFFFFF;
+  border: 1px solid #dadce0;
+
 }
 
 .terms {
@@ -135,12 +145,16 @@ h1 {
 
 .footerClone {
   font-size: 34px;
+  color: #0a66c2;
   font-weight: bold;
   align-items: center;
 }
 
 
-@media (max-width: 768px) {
+@media (width <= 475px) {
+  .nav-links-linked {
+    display: none;
+  }
   .main-linked {
     flex-direction: column;
     padding: 24px;
