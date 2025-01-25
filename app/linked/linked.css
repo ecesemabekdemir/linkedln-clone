@@ -10,10 +10,6 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 
-.logo {
-  width: 135px;
-  height: 34px;
-}
 
 .nav-links-linked {
   display: flex;

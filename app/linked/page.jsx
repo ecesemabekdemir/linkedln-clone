@@ -10,7 +10,7 @@ export default function LinkedPage() {
           <Image
             src="https://content.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Logo.svg.original.svg"
             alt="LinkedIn"
-            className="logo"
+            className="logo-linked"
             width={135}
             height={34}
           ></Image>
